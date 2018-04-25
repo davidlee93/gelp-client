@@ -1,0 +1,65 @@
+.place-result-header {
+    display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.place-result-left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 275px;
+}
+
+.place-result-title h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.place-result-left-box{
+    display: flex;
+}
+
+.place-result-left-ratings {
+    width: 100%;
+}
+
+.place-result-left-ratings h4 {
+    margin-top: 0;
+}
+
+.place-result-left-info {
+    width: 100%;
+}
+
+.place-result-left-info h4 {
+    margin-top: 0;
+}
+
+.hours-list {
+    padding-left: 0;
+}
+
+.place-result-right {
+    width: 50%;
+    height: 275px;
+}
+
+.place-result-map {
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+}
+
+.write-a-review-button {
+    background-color: #d32323;
+}
+
+.write-a-review-button a {
+    text-decoration: none;
+    color: white;
+}
+
+.hours-list {
+    list-style-type: none;
+}

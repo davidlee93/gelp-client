@@ -1,0 +1,29 @@
+.search-results-list {
+    padding-left: 0;
+}
+
+.search-results {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid grey;
+}
+
+.img {
+    padding-left: 5px;
+    margin-right: 40px;
+}
+
+.address p {
+    margin-top: 0;
+}
+
+.info {
+    width: 300px;
+}
+
+.info h3, .info p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+

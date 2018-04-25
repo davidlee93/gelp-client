@@ -1,0 +1,8 @@
+.searchPage {
+    background-color: lightblue;
+}
+
+.search-box {
+    height: 500px;
+    display: flex;
+}

@@ -1,0 +1,9 @@
+.header-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-filter h1 {
+    margin: 5px;
+}

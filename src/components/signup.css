@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans",
+    sans-serif;
+    font-size: 20px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+
+.signup-form div input{
+    width: 300px;
+}
+
+#first-name, #last-name{
+    width: 150px;
+}
+
+.name {
+    display: flex;
+}
+
+.signup-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

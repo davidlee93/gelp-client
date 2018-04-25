@@ -1,0 +1,26 @@
+
+.rate-header-box {
+    background-color: #d32323;
+}
+
+.rate-header h3 {
+    margin-left: 15%;
+    margin-right: 15%;
+    color: white;
+}
+
+.rate-section {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.review-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-writing-section {
+    width: 50%;
+}
+
+
