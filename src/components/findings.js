@@ -25,7 +25,7 @@ export default class Findings extends React.Component {
                         </div>
                     </div>
                     <div className="search-results-map-container">
-                        <div className="search-results-map">
+                        <div className="search-results-map" id="map">
                         </div>
                     </div>
                 </div>

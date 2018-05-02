@@ -11,6 +11,7 @@
 .search-div {
     display: flex;
     align-items: center;
+    padding-left: 15px;
 }
 
 input#location {
@@ -37,7 +38,9 @@ input#location.border-right {
     border: none;
     background: #d32323;
     border-radius: 3px;
-    font-size: 12px;
+    border-color: #8d0005;
+    font-size: 14px;
+    font-weight: 700;
     color: white;
 }
 

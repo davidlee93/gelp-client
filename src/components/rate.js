@@ -85,9 +85,9 @@ export default class Rate extends React.Component {
                         </div>
                         <div className="review-writing-section">
                             <label for="review-summary">Review summary</label>
-                            <textarea name="dream-summary" rows="15" cols="70"></textarea>
+                            <textarea name="review-summary" rows="15" cols="70"></textarea>
                         </div>
-                        <button type="submit">Post Review</button>
+                        <button type="submit" className="rate-submit-button">Post Review</button>
                     </form>
                 </section>
             </div>
