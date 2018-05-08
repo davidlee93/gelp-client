@@ -1,0 +1,28 @@
+.signup-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+.form-input {
+    width: 300px;
+    margin-bottom: 6px;
+}
+.form-input input {
+    width: 150px;
+}
+/* .name {
+    display: flex;
+    width: 300px;
+} 
+.name div {
+    width: 150px;
+}
+#firstName, #lastName {
+    width: 150px;
+} */

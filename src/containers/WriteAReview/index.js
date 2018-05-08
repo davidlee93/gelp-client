@@ -1,13 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import requiresLogin from '../../components/requires-login';
+import LogOutBar from '../../components/logout-bar';
 import './rate.css';
 
-export default class Rate extends React.Component {
+export class Rate extends React.Component {
     render() {
         return (
             <div className="ratePage">
                 <header className="rate-header-box">
                     <div className="rate-header">
                         <h3>gelp Write a Review</h3>
+                        <LogOutBar />
                     </div>
                 </header>
                 <section className="rate-section">
@@ -94,3 +98,5 @@ export default class Rate extends React.Component {
         );
     }
 }
+
+export default requiresLogin()(connect(Rate));

@@ -10,6 +10,7 @@ export default class LandingBoxStart extends React.Component {
                 </h2>
                 <p>
                     <a href="/signup" >Sign up</a> and start searching!
+                    Already on gelp?<a href="/login">Log In</a>
                 </p>
             </div>
         );

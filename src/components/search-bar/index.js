@@ -44,5 +44,5 @@ export default class SearchBar extends React.Component {
         );
     }
 }
-{/* <button className="btn active" onclick="filterSelection('all')"> $</button>
-<button disabled={!this.state.keyword && !this.state.location}>submit</button> */}
+/* <button className="btn active" onclick="filterSelection('all')"> $</button>
+<button disabled={!this.state.keyword && !this.state.location}>submit</button> */

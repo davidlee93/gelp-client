@@ -1,16 +1,22 @@
 import React from 'react';
-import SearchBar from './search-bar';
-import Filter from './filter';
-import SearchResults from './search-results';
-import Pagination from './pagination';
+import {connect} from 'react-redux';
+import requiresLogin from '../../components/requires-login';
+import SearchBar from '../../components/search-bar';
+import LogOutBar from '../../components/logout-bar';
+import Filter from '../../components/filter';
+import SearchResults from '../../components/search-results';
+import Pagination from '../../components/pagination';
 import './findings.css';
 
-export default class Findings extends React.Component {
+export class Findings extends React.Component {
     render() {
         return (
             <div className="findingsPage">
                 <div className="nav-search-box">
                     <SearchBar />
+                </div>
+                <div className="header-logout-box">
+                    <LogOutBar />
                 </div>
                 <div className="header-filter-box">
                     <Filter />
@@ -33,3 +39,16 @@ export default class Findings extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    currentUser: state.auth.currentUser
+});
+
+export default requiresLogin()(connect(mapStateToProps)(Findings));
+
+// rating = {service: 5, clean: 5, userId: currentUser, restId: 'someId'}
+// fetch(/api/ratings/)
+// fetch(/api/ratings/:userID)
+// fetch(/api/restraunts)
+// fetch(/api/ratings/:restId)
