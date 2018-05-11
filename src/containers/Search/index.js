@@ -20,7 +20,7 @@ export class Search extends React.Component {
                     <LogOutBar />
                 </div>
                 <div className="search-box">
-                    <SearchBar onChange={location => this.setState({location})}/>
+                    <SearchBar />
                 </div>
             </div>
         );
@@ -30,10 +30,10 @@ export class Search extends React.Component {
 const mapStateToProps = state => {
     const {currentUser} = state.auth;
     return {
-        email: state.auth.currentUser.email,
-        name: `${currentUser.firstName} ${currentUser.lastName}`,
+// email: state.auth.currentUser.email,
+// name: `${currentUser.firstName} ${currentUser.lastName}`,
         protectedData: state.protectedData.data
     };
 };
-
-export default requiresLogin()(connect(mapStateToProps)(Search));
+export default connect(mapStateToProps)(Search);
+// export default requiresLogin()(connect(mapStateToProps)(Search));

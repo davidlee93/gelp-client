@@ -6,13 +6,13 @@ export default class PlaceReviews extends React.Component {
         return (
             <div className="place-result-reviews-box">
                 <ul className="place-result-reviews">
-                    <li class="place-result-review">
+                    <li className="place-result-review">
                         username1: review/comments
                     </li>
-                    <li class="place-result-review">
+                    <li className="place-result-review">
                         username2: review/comments
                     </li>
-                    <li class="place-result-review">
+                    <li className="place-result-review">
                         username3: review/comments
                     </li>
                 </ul>

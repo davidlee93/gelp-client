@@ -7,6 +7,7 @@
 
 .landing-box-list {
     list-style-type: none;
+    padding-left: 0;
     height: 300px;
     display: flex;
     justify-content: center;

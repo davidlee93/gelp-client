@@ -14,7 +14,7 @@
     padding-left: 15px;
 }
 
-input#location {
+input.search {
     border: none;
     font-size: 18px;
     height: 30px;
@@ -22,7 +22,7 @@ input#location {
     width: 300px;
 }
 
-input#location.border-right {
+input.search.border-right {
     border-right: 1px solid grey;
 }
 
@@ -48,3 +48,6 @@ input#location.border-right {
     background: #be2020;
 }
 
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}

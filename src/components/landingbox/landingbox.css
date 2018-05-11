@@ -1,5 +1,6 @@
 
 .landing-box-list li {
+    padding-left: 0;
     width: 30%;
     border: 1px solid black;
     text-align: center;

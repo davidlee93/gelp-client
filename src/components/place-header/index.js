@@ -1,7 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './place-header.css';
 
-export default class PlaceHeader extends React.Component {
+export class PlaceHeader extends React.Component {
+    componentDidMount(){
+        console.log(this.props.findings);
+    }
     render() {
         return(
             <div className="place-result-header">
@@ -32,9 +36,16 @@ export default class PlaceHeader extends React.Component {
                     </div>
                 </div>
                 <div className="place-result-right">
-                    <div className="place-result-map">MAP</div>
+                    <div className="place-result-map" id="map">MAP</div>
                 </div>
             </div>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    keyword: state.search.keyword,
+    location: state.search.location,
+    findings: state.search.findings
+});
+export default connect(mapStateToProps)(PlaceHeader);

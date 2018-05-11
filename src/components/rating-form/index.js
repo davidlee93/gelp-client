@@ -9,12 +9,58 @@ import {required, nonEmpty, length, isTrimmed} from '../../validators';
 const reviewLength = length({min: 1, max: 300});
 
 export class RatingForm extends React.Component {
+    onSubmit(values) {
+        return fetch('/api/reviews', {
+            method: 'POST',
+            body: JSON.stringify(values),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => {
+            if (!res.ok) {
+                if (
+                    res.headers.has('content-type') &&
+                    res.headers
+                        .get('content-type')
+                        .startsWith('application/json')
+                ) {
+                    // It's a nice JSON error returned by us, so decode it
+                    return res.json().then(err => Promise.reject(err));
+                }
+                // It's a less informative error returned by express
+                return Promise.reject({
+                    code: res.status,
+                    message: res.statusText
+                });
+            }
+            return;
+        })
+        .then(() => console.log('Submitted with values', values))
+        .catch(err => {
+            const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                // Convert ValidationErrors into SubmissionErrors for Redux Form
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
+            return Promise.reject(
+                new SubmissionError({
+                    _error: 'Error submitting review'
+                })
+            );
+        });
+    }
+
     render() {
         let successMessage;
         if (this.props.submitSucceeded) {
             successMessage = (
                 <div className="message message-success">
-                    Message submitted successfully
+                    Review posted
                 </div>
             );
         }
@@ -81,6 +127,8 @@ export class RatingForm extends React.Component {
                         placeholder="review..."
                         element="textarea"
                         name="textarea"
+                        rows="10" 
+                        cols="40"
                         validate={[required, reviewLength, nonEmpty, isTrimmed]}
                     />
                     <button
@@ -99,82 +147,4 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('ratings', Object.keys(errors)[0]))
 })(RatingForm);
-
-
-// previous solution...
-// <form id="review-form">
-//     <div className="review-section">
-//         <p>Select your ratings</p>
-//         <div className="quantity-rating">
-//             <label for="quantity-rating">Quantity</label>
-//             <input type="radio" name="quantity" value="1" className="quanity-radio"/>
-//             <label for="quantity">
-//                 <span>1 Star</span>
-//             </label>
-//             <input type="radio" name="quantity" value="2" className="quanity-radio"/>
-//             <label for="quantity">
-//                 <span>2 Star</span>
-//             </label>
-//             <input type="radio" name="quantity" value="3" className="quanity-radio"/>
-//             <label for="quantity">
-//                 <span>3 Star</span>
-//             </label>
-//             <input type="radio" name="quantity" value="4" className="quanity-radio"/>
-//             <label for="quantity">
-//                 <span>4 Star</span>
-//             </label>
-//             <input type="radio" name="quantity" value="5" className="quanity-radio"/>
-//             <label for="quantity">
-//                 <span>5 Star</span>
-//             </label>
-//         </div>
-//         <div className="quality-rating">
-//             <label for="quality-rating">Quality</label>
-//             <input type="radio" name="quality" value="1" className="quality-radio"/>
-//             <label for="quality">
-//                 <span>1 Star</span>
-//             </label>
-//             <input type="radio" name="quality" value="2" className="quality-radio"/>
-//             <label for="quality">
-//                 <span>2 Star</span>
-//             </label>
-//             <input type="radio" name="quality" value="3" className="quality-radio"/>
-//             <label for="quantity">
-//                 <span>3 Star</span>
-//             </label>
-//             <input type="radio" name="quality" value="4" className="quality-radio"/>
-//             <label for="quality">
-//                 <span>4 Star</span>
-//             </label>
-//             <input type="radio" name="quality" value="5" className="quality-radio"/>
-//             <label for="quality">
-//                 <span>5 Star</span>
-//             </label>
-//         </div>
-//         <div className="price-rating">
-//             <label for="price-rating">Price</label>
-//             <input type="radio" name="price" value="1" className="price-radio"/>
-//             <label for="price">
-//                 <span>$</span>
-//             </label>
-//             <input type="radio" name="price" value="2" className="price-radio"/>
-//             <label for="price">
-//                 <span>$$</span>
-//             </label>
-//             <input type="radio" name="price" value="3" className="price-radio"/>
-//             <label for="price">
-//                 <span>$$$</span>
-//             </label>
-//             <input type="radio" name="price" value="4" className="price-radio"/>
-//             <label for="quality">
-//                 <span>$$$$</span>
-//             </label>
-//         </div>
-//     </div>
-//     <div className="review-writing-section">
-//         <label for="review-summary">Review summary</label>
-//         <textarea name="review-summary" rows="15" cols="70"></textarea>
-//     </div>
-//     <button type="submit" className="rate-submit-button">Post Review</button>
-// </form>
 

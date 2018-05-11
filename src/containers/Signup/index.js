@@ -13,7 +13,9 @@ export function Signup (props) {
         <div className="signUpPage">
             <Header />
             <SignupForm />
-            Already on Gelp?<Link to="/login">Log In</Link>
+            <div className="already-login">
+                Already on Gelp?<Link to="/login">Log In</Link>
+            </div>
         </div>
     );
 }

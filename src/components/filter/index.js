@@ -1,11 +1,14 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import './filter.css';
 
-export default class Filter extends React.Component {
+export class Filter extends React.Component {
     render() {
         return (
             <header role="banner" className="header-filter">
-                <h1>Best ____ in _____</h1>
+                <div>
+                    <h2>Best ____ in ____</h2>
+                </div>
                 <div id="myBtnContainer">
                     <button className="btn active" onclick="filterSelection('all')"> $</button>
                     <button className="btn" onclick="filterSelection('')"> $$</button>
@@ -17,3 +20,11 @@ export default class Filter extends React.Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    loggedIn: state.auth.currentUser !== null,
+    keyword: state.search.keyword,
+    location: state.search.location
+});
+
+export default connect(mapStateToProps)(Filter);

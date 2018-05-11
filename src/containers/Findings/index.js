@@ -6,6 +6,8 @@ import LogOutBar from '../../components/logout-bar';
 import Filter from '../../components/filter';
 import SearchResults from '../../components/search-results';
 import Pagination from '../../components/pagination';
+import Spinner from 'react-spinkit';
+
 import './findings.css';
 
 export class Findings extends React.Component {
@@ -21,10 +23,11 @@ export class Findings extends React.Component {
                 <div className="header-filter-box">
                     <Filter />
                 </div>
+      
                 <div className="search-results-container">
                     <div className="search-results-column">
                         <div className="search-results-box">
-                            <SearchResults />
+                            {this.props.search.keyword && this.props.search.location && <SearchResults />}
                         </div>
                         <div className="search-results-pagination">
                             <Pagination />
@@ -42,10 +45,11 @@ export class Findings extends React.Component {
 
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
-    currentUser: state.auth.currentUser
+    currentUser: state.auth.currentUser,
+    search: state.search
 });
-
-export default requiresLogin()(connect(mapStateToProps)(Findings));
+export default connect(mapStateToProps)(Findings);
+// export default requiresLogin()(connect(mapStateToProps)(Findings));
 
 // rating = {service: 5, clean: 5, userId: currentUser, restId: 'someId'}
 // fetch(/api/ratings/)

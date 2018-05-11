@@ -25,5 +25,5 @@ export class Place extends React.Component{
         );
     }
 }
-
-export default requiresLogin()(connect(Place));
+export default connect()(Place);
+// export default requiresLogin()(connect(Place));

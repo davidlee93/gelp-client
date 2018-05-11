@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter as Router, Route, withRouter} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import Landing from '../Landing';
 import Signup from '../Signup';
 import Login from '../Login';
@@ -45,20 +45,18 @@ export class App extends React.Component {
 
     render() {
         return (
-            <Router>
-                <div className="app">
-                    <main>
-                        <Route exact path="/" component={Landing} />
-                        <Route exact path="/signup" component={Signup} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/search" component={Search} />
-                        <Route exact path="/findings" component={Findings} />
-                        <Route exact path="/place" component={Place} />
-                        <Route exact path="/rate" component={Rate} />
-                    </main>
-                    <Footer />
-                </div>
-            </Router>
+            <div className="app">
+                <main>
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/search" component={Search} />
+                    <Route exact path="/findings" component={Findings} />
+                    <Route exact path="/place" component={Place} />
+                    <Route exact path="/rate" component={Rate} />
+                </main>
+                <Footer />
+            </div>
         );
     }
 }

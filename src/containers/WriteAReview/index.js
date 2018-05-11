@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import requiresLogin from '../../components/requires-login';
 import LogOutBar from '../../components/logout-bar';
+import RatingForm from '../../components/rating-form';
 import './rate.css';
 
 export class Rate extends React.Component {
@@ -18,85 +19,11 @@ export class Rate extends React.Component {
                     <div className="rate-title">
                         <h2>Place to rate</h2>
                     </div>
-                    <form id="review-form">
-                        <div className="review-section">
-                            <p>Select your ratings</p>
-                            <div className="quantity-rating">
-                                <label for="quantity-rating">Quantity</label>
-                                <input type="radio" name="quantity" value="1" className="quanity-radio"/>
-                                <label for="quantity">
-                                    <span>1 Star</span>
-                                </label>
-                                <input type="radio" name="quantity" value="2" className="quanity-radio"/>
-                                <label for="quantity">
-                                    <span>2 Star</span>
-                                </label>
-                                <input type="radio" name="quantity" value="3" className="quanity-radio"/>
-                                <label for="quantity">
-                                    <span>3 Star</span>
-                                </label>
-                                <input type="radio" name="quantity" value="4" className="quanity-radio"/>
-                                <label for="quantity">
-                                    <span>4 Star</span>
-                                </label>
-                                <input type="radio" name="quantity" value="5" className="quanity-radio"/>
-                                <label for="quantity">
-                                    <span>5 Star</span>
-                                </label>
-                            </div>
-                            <div className="quality-rating">
-                                <label for="quality-rating">Quality</label>
-                                <input type="radio" name="quality" value="1" className="quality-radio"/>
-                                <label for="quality">
-                                    <span>1 Star</span>
-                                </label>
-                                <input type="radio" name="quality" value="2" className="quality-radio"/>
-                                <label for="quality">
-                                    <span>2 Star</span>
-                                </label>
-                                <input type="radio" name="quality" value="3" className="quality-radio"/>
-                                <label for="quantity">
-                                    <span>3 Star</span>
-                                </label>
-                                <input type="radio" name="quality" value="4" className="quality-radio"/>
-                                <label for="quality">
-                                    <span>4 Star</span>
-                                </label>
-                                <input type="radio" name="quality" value="5" className="quality-radio"/>
-                                <label for="quality">
-                                    <span>5 Star</span>
-                                </label>
-                            </div>
-                            <div className="price-rating">
-                                <label for="price-rating">Price</label>
-                                <input type="radio" name="price" value="1" className="price-radio"/>
-                                <label for="price">
-                                    <span>$</span>
-                                </label>
-                                <input type="radio" name="price" value="2" className="price-radio"/>
-                                <label for="price">
-                                    <span>$$</span>
-                                </label>
-                                <input type="radio" name="price" value="3" className="price-radio"/>
-                                <label for="price">
-                                    <span>$$$</span>
-                                </label>
-                                <input type="radio" name="price" value="4" className="price-radio"/>
-                                <label for="quality">
-                                    <span>$$$$</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div className="review-writing-section">
-                            <label for="review-summary">Review summary</label>
-                            <textarea name="review-summary" rows="15" cols="70"></textarea>
-                        </div>
-                        <button type="submit" className="rate-submit-button">Post Review</button>
-                    </form>
+                    <RatingForm />
                 </section>
             </div>
         );
     }
 }
-
-export default requiresLogin()(connect(Rate));
+export default connect()(Rate);
+// export default requiresLogin()(connect(Rate));
