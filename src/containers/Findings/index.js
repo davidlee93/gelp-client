@@ -1,20 +1,33 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import requiresLogin from '../../components/requires-login';
+//import requiresLogin from '../../components/requires-login';
+import Logo from '../../components/logo';
 import SearchBar from '../../components/search-bar';
 import LogOutBar from '../../components/logout-bar';
 import Filter from '../../components/filter';
 import SearchResults from '../../components/search-results';
 import Pagination from '../../components/pagination';
-import Spinner from 'react-spinkit';
+
 
 import './findings.css';
 
 export class Findings extends React.Component {
+
+    searchWait() {
+
+
+        if (this.props.error) {
+            return <strong>{this.props.error}</strong>;
+        }
+
+        return;
+    }
+
     render() {
         return (
             <div className="findingsPage">
                 <div className="nav-search-box">
+                    <Logo />
                     <SearchBar />
                 </div>
                 <div className="header-logout-box">

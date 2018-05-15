@@ -1,6 +1,6 @@
-.header-logo {
-    font-size: 40px;
+.header-title{
+    margin-top: 0;
+    font-size: 30px;
     text-align: center;
-    border-bottom: 1px black solid;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
 }

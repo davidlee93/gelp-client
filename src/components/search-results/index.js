@@ -1,12 +1,23 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {searchSuccess, searchInputs} from '../../actions/search';
+import {withRouter, Link} from 'react-router-dom';
+import {searchSuccess} from '../../actions/search';
 import Spinner from 'react-spinkit';
+import styled from 'styled-components';
 import './search-results.css';
 
+
+const StyledLink = styled(Link)`
+    color: #0073bb;
+    font-family: Helvetica, Arial, sans-serif;
+    text-decoration: none;
+
+    &:hover {
+    text-decoration: underline;
+    }
+`;
+
 export class SearchResults extends React.Component {
-    state = {results: null};
     componentDidMount() {
         const google = window.google
     
@@ -37,10 +48,10 @@ export class SearchResults extends React.Component {
             for (var i = 0; i < place.length; i++) {
                 var placeLoc = place[i].geometry.location;
                 var content = 
-                `<div><h3>${place[i].name}</h3></div>
-                <div>${place[i].vicinity}</div>
-                <br>
-                <div>Open now: ${place[i].opening_hours.open_now ? 'Yes' : 'No'}</div>`
+                    `<div><h3>${place[i].name}</h3></div>
+                    <div>${place[i].vicinity}</div>
+                    <br>
+                    <div>Open now: ${place[i].opening_hours.open_now ? 'Yes' : 'No'}</div>`
                 var marker = new google.maps.Marker({
                     map: map,
                     position: placeLoc,
@@ -56,9 +67,7 @@ export class SearchResults extends React.Component {
     }
 
     callback = (results, status) => {
-        console.log('callback fired')
-        this.setState({results})
-        this.props.dispatch(searchSuccess({results}))
+        this.props.dispatch(searchSuccess(results))
         // if (status == window.google.maps.places.PlacesServiceStatus.OK) {
         //     for (var i = 0; i < results.length; i++) {
         //         var place = results[i];
@@ -76,12 +85,19 @@ export class SearchResults extends React.Component {
             return <strong>{this.props.error}</strong>;
         }
         
-        const restaurants = this.state.results.map((restaurant, index) =>
+        const restaurants = this.props.findings.map((restaurant, index) =>
             <li className="search-results" key={index}>
-                <div className="img"><img src={restaurant.icon}/></div>
+                <div className="img"><img src={restaurant.icon} alt="icon" /></div>
                 <div className="info">
-                    <h3><Link to="place" id={restaurant.place_id}>{restaurant.name}</Link></h3>
-                    <h4>Rating:{restaurant.rating}</h4>
+                    <div className="info-title">
+                        <span className="index">{index + 1}. </span>
+                        <h4>
+                            <StyledLink to={`place/${restaurant.place_id}`}>
+                                {restaurant.name}
+                            </StyledLink>
+                        </h4>
+                    </div>
+                    <h5>Rating:{restaurant.rating}</h5>
                     <p>Open now: {restaurant.opening_hours.open_now ? 'Yes' : 'No'}</p>
                 </div>
                 <div className="address">
@@ -98,23 +114,12 @@ export class SearchResults extends React.Component {
     }
 
     render() {
-        if (!this.state.results)  {
+        if (!this.props.findings)  {
             return false
         }
         return(
             <ul className="search-results-list">
                 {this.renderResults()}
-                <li className="search-results">
-                    <div className="img">img</div>
-                    <div className="info">
-                        <h3><a href="#">Place 4</a></h3>
-                        <h4>Ratings</h4>
-                        <p>stars</p>
-                    </div>
-                    <div className="address">
-                        <p>address</p>
-                    </div>
-                </li>
             </ul>
         )
     }
@@ -125,4 +130,4 @@ const mapStateToProps = state => ({
     location: state.search.location,
     findings: state.search.findings
 });
-export default connect(mapStateToProps)(SearchResults);
+export default withRouter(connect(mapStateToProps)(SearchResults));

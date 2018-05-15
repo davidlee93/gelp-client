@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Header from '../../components/header';
 import LogOutBar from '../../components/logout-bar';
 import SearchBar from '../../components/search-bar';
-import requiresLogin from '../../components/requires-login';
+//import requiresLogin from '../../components/requires-login';
 import './search.css';
 import { fetchProtectedData } from '../../actions/protected-data';
 
@@ -28,7 +28,7 @@ export class Search extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const {currentUser} = state.auth;
+    // const {currentUser} = state.auth;
     return {
 // email: state.auth.currentUser.email,
 // name: `${currentUser.firstName} ${currentUser.lastName}`,

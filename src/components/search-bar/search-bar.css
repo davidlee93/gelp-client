@@ -37,7 +37,7 @@ input.search.border-right {
 .search-button {
     border: none;
     background: #d32323;
-    border-radius: 3px;
+    border-radius: 0 3px 3px 0;
     border-color: #8d0005;
     font-size: 14px;
     font-weight: 700;

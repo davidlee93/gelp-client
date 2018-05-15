@@ -79,6 +79,13 @@ export class RatingForm extends React.Component {
                     )}>
                     {successMessage}
                     {errorMessage}
+                    {/* <Field>
+                        component={Input}
+                        type="text"
+                        name="title"
+                        readonly
+                        validate={[required, reviewLength, nonEmpty, isTrimmed]}
+                    </Field> */}
                     <Field 
                         component={Radio}
                         type="radio"

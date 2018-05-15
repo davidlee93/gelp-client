@@ -9,15 +9,15 @@ export default class Pagination extends React.Component {
                     <a>Page 1 of 5</a>
                 </div>
                 <div className="page-links">
-                    <a href="#"> &lt; </a>
-                    <a href="#">Previous</a>
-                    <a href="#">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">Next</a>
-                    <a href="#"> &gt; </a>
+                    <a href="#arw"> &lt; </a>
+                    <a href="#prev">Previous</a>
+                    <a href="#1">1</a>
+                    <a href="#2">2</a>
+                    <a href="#3">3</a>
+                    <a href="#4">4</a>
+                    <a href="#5">5</a>
+                    <a href="#next">Next</a>
+                    <a href="#arw"> &gt; </a>
                 </div>
             </div>
         );

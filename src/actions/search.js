@@ -3,6 +3,11 @@ export const setKeyword = keyword => ({
     type: SET_KEYWORD,
     keyword
 });
+export const SET_NEAR = 'SET_NEAR';
+export const setNear = near => ({
+    type: SET_NEAR,
+    near
+});
 
 export const SET_LOCATION = 'SET_LOCATION';
 export const setLocation = location => ({
@@ -25,6 +30,18 @@ export const SEARCH_ERROR = 'SEARCH_ERROR';
 export const searchError = error => ({
     type: SEARCH_ERROR,
     error
+});
+
+export const SET_PLACE_ID = 'SET_PLACE_ID';
+export const setPlaceId = id => ({
+    type: SET_PLACE_ID,
+    id
+});
+
+export const SET_DETAIL_INFO = 'SET_DETAIL_INFO';
+export const setDetailInfo = placeInfo => ({
+    type: SET_DETAIL_INFO,
+    placeInfo
 });
 
 // export const searchInputs = (keyword, location) => dispatch => {

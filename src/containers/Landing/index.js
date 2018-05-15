@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import LandingBoxWhat from '../../components/landingbox/landingboxwhat';
 import LandingBoxHow from '../../components/landingbox/landingboxhow';
 import LandingBoxStart from '../../components/landingbox/landingboxstart';

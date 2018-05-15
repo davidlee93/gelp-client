@@ -1,7 +1,4 @@
-import React from 'react';
-
-import { setLocation } from '../actions/search'
-
+/*
 fetchUserData() {
     fetch('/user/data')
     .then(response => response.json())
@@ -32,16 +29,4 @@ export const userReducer = (state=initialState, action) => {
     return state;
 };
 
-import Spinner from 'react-spinkit';
-searchWait() {
-    if (this.props.loading) {
-        return <Spinner spinnerName="circle" noFadeIn />;
-    }
-
-    if (this.props.error) {
-        return <strong>{this.props.error}</strong>;
-    }
-
-    return;
-}
-
+*/

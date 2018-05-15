@@ -7,14 +7,7 @@ export class Filter extends React.Component {
         return (
             <header role="banner" className="header-filter">
                 <div>
-                    <h2>Best ____ in ____</h2>
-                </div>
-                <div id="myBtnContainer">
-                    <button className="btn active" onclick="filterSelection('all')"> $</button>
-                    <button className="btn" onclick="filterSelection('')"> $$</button>
-                    <button className="btn" onclick="filterSelection('')"> $$$ </button>
-                    <button className="btn" onclick="filterSelection('')"> $$$$</button>
-                    <button className="btn" onclick="filterSelection('')"> Open Now</button>
+                    <h3>Best {this.props.keyword} <span className="query-location">in {this.props.near}</span></h3>
                 </div>
             </header>
         );
@@ -24,7 +17,9 @@ export class Filter extends React.Component {
 const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
     keyword: state.search.keyword,
-    location: state.search.location
+    near: state.search.near,
+    location: state.search.location,
+    locality: state.search.locality
 });
 
 export default connect(mapStateToProps)(Filter);

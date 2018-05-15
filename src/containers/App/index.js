@@ -52,8 +52,8 @@ export class App extends React.Component {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/search" component={Search} />
                     <Route exact path="/findings" component={Findings} />
-                    <Route exact path="/place" component={Place} />
-                    <Route exact path="/rate" component={Rate} />
+                    <Route exact path="/place/:id" component={Place} />
+                    <Route exact path="/rate/:id" component={Rate} />
                 </main>
                 <Footer />
             </div>

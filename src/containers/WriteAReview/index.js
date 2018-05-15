@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import requiresLogin from '../../components/requires-login';
+// import requiresLogin from '../../components/requires-login';
+import Logo from '../../components/logo';
 import LogOutBar from '../../components/logout-bar';
 import RatingForm from '../../components/rating-form';
 import './rate.css';
@@ -11,7 +12,8 @@ export class Rate extends React.Component {
             <div className="ratePage">
                 <header className="rate-header-box">
                     <div className="rate-header">
-                        <h3>gelp Write a Review</h3>
+                        <Logo />
+                        <h3>Write a Review</h3>
                         <LogOutBar />
                     </div>
                 </header>
