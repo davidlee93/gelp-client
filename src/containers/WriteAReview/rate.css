@@ -1,40 +1,44 @@
-
 .rate-header-box {
-    background-color: #d32323;
+  background-color: #d32323;
 }
 
-.rate-header h3 {
-    color: white;
-    margin: 0 15%;
-    padding-left: 60px;
-    padding-top: 15px;
+.rate-header {
+  display: flex;
+  margin: 0 12.5%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.rate-header h4 {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 0;
 }
 
 .rate-section {
-    margin-left: 15%;
-    margin-right: 15%;
-    width: 400px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  width: 500px;
 }
 
 .review-section {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .review-writing-section {
-    width: 50%;
+  width: 50%;
 }
 
 .rate-submit-button {
-    background-color: #d32323;
-    padding: 5px;
-    border-radius: 3px;
-    cursor: pointer;
-    min-width: 200px;
-    height: 48px;
-    font-size: 16px;
-    color: white;
-    font-weight: 700; 
-    border-color: #8d0005;
+  background-color: #d32323;
+  padding: 5px;
+  border-radius: 3px;
+  cursor: pointer;
+  min-width: 200px;
+  height: 48px;
+  font-size: 16px;
+  color: white;
+  font-weight: 700;
+  border-color: #8d0005;
 }
-

@@ -6,7 +6,7 @@ export default class Header extends React.Component {
         return (
             <header>
                 <div> 
-                    <h1 className="header-title">Gelp</h1>
+                    <a href="/search" className="header-title-link"><h1 className="header-title">Gelp</h1></a>
                 </div>
             </header>
         );

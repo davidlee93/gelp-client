@@ -1,13 +1,12 @@
 .header-filter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  margin: 0 15.5%;
 }
 
-.header-filter h1 {
-    margin: 5px;
+.header-filter h3 {
+  margin: 0;
 }
 
 .query-location {
-    font-weight: normal;
+  font-weight: normal;
 }

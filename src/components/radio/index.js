@@ -1,12 +1,16 @@
-import React from 'react';
+import React from "react";
 
-import { Field } from 'redux-form';
+import { Field } from "redux-form";
 
 export const Radio = props => {
   if (props && props.input && props.options) {
     const renderRadioButtons = (key, index) => {
       return (
-        <label className="radio-button" key={`${index}`} htmlFor={`${props.input.name}-${index}`}>
+        <label
+          className="radio-button"
+          key={`${index}`}
+          htmlFor={`${props.input.name}-${index}`}
+        >
           <Field
             id={`${props.input.name}`}
             component="input"
@@ -17,21 +21,18 @@ export const Radio = props => {
           />
           {props.options[key]}
         </label>
-      )
+      );
     };
     return (
       <div className="radio-star">
-        <div className="star-value">
-          {props.label}
-        </div>
-        <div>
-          {props.options &&
-            Object.keys(props.options).map(renderRadioButtons)}
+        <div className="star-value">{props.label}</div>
+        <div className="radio-button-div">
+          {props.options && Object.keys(props.options).map(renderRadioButtons)}
         </div>
       </div>
     );
   }
-  return <div></div>
-}
+  return <div />;
+};
 
 export default Radio;

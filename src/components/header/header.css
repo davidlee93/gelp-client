@@ -1,6 +1,14 @@
 .header-title{
-    margin-top: 0;
-    font-size: 30px;
+    margin: auto 0;
+    font-size: 40px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
+}
+.header-title-link {
+    text-decoration: none;
+    color: black;
+}
+
+.hours li {
+    font-size: 15px;
 }

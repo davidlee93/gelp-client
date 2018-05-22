@@ -1,71 +1,129 @@
+.place-result-detail-box {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+}
+
 .place-result-detail {
-    display: flex;
-    margin-left: 15%;
-    margin-right: 15%;
+  display: flex;
 }
 
 .place-result-left {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 275px;
+  width: 66%;
 }
 
 .place-result-title h2 {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.place-result-left-box{
-    display: flex;
+.place-images-box {
+  margin-top: 25px;
+}
+
+.place-images {
+  display: flex;
+  width: 100%;
+  height: 225px;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: scroll;
+}
+
+.place-image {
+  min-width: 225px;
+  min-height: 225px;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.place-result-left-box {
+  display: flex;
 }
 
 .place-result-left-ratings {
-    width: 100%;
+  width: 40%;
 }
 
 .place-result-left-ratings h4 {
-    margin-top: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.reviews-number {
+  margin: 0;
 }
 
 .place-result-left-info {
-    width: 100%;
+  width: 50%;
 }
 
-.place-result-left-info h4 {
-    margin-top: 0;
+.place-result-left-info h5 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .hours-list {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 .place-result-right {
-    width: 40%;
-    height: 350px;
+  width: 33%;
+  margin-top: 10px;
 }
 
 .place-result-map {
-    width: 100%;
-    height: 50%;
-    background-color: lightblue;
+  width: 100%;
+  height: 75%;
+  background-color: lightblue;
+}
+
+.place-ratings-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.place-ratings-list li {
+  font-size: 18px;
 }
 
 .write-a-review-button {
-    background-color: #d32323;
-    border-color:#8d0005;
-    border-radius: 3px;
-    padding: 8px 15px;
-}
-
-.write-a-review-button a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
+  background-color: #d32323;
+  border-color: #8d0005;
+  border-radius: 3px;
+  padding: 9px 18px;
+  margin-top: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .hours-list {
-    list-style-type: none;
+  list-style-type: none;
+  margin-top: 0;
+}
+
+.hours-list li {
+  font-size: 14px;
+}
+.place-address p,
+.place-number p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+.place-website {
+  margin-top: -8px;
+}
+.place-website a {
+  text-decoration: none;
+  color: #0073bb;
+  font-size: 14px;
+}
+
+.place-website a:visited {
+  text-decoration: none;
+  color: #0073bb;
 }

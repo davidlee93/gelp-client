@@ -29,4 +29,19 @@ export const userReducer = (state=initialState, action) => {
     return state;
 };
 
+RATINGS DATA PARTIAL WORK
+  {q: 7},
+  {q: 18}
+  25/2
+  let quality = 0
+  let price  = 0
+  for (i = 0; i < ratings.length; i++) {
+    quality += ratings[i].quality
+    price += ratings[i].price  
+  }
+
+    const total = quality / ratings.length
+
+  const rating = {quality: ratings[0] + ratings[1] / 2} || {};
+
 */

@@ -1,34 +1,39 @@
 .nav-search-box {
-    padding: 10px;
-    background-color: lightblue;
+  padding: 12px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  padding-right: 20px;
 }
 
 .header-filter-box {
-    padding-bottom: 30px;
-    background-color: lightgrey;
+  margin-top: 10px;
 }
 
 .search-results-container {
-    margin-left: 15%;
-    margin-right: 15%;
-    display: flex;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  display: flex;
 }
 
 .search-results-column {
-
+  width: 66%;
 }
 
 .search-results-box {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .search-results-map-container {
-
+  width: 33%;
+  position: fixed;
+  right: 60px;
+  margin-top: -25px;
 }
 
 .search-results-map {
-    width: 300px;
-    height: 325px;
-    background-color: lightblue;
-    border: 1px solid black;
+  width: 300px;
+  height: 325px;
+  background-color: lightblue;
+  border: 1px solid black;
 }

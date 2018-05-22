@@ -1,0 +1,42 @@
+.place-result-reviews {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-right: 1px solid lightgray;
+}
+
+.place-result-review {
+  display: flex;
+  flex-direction: row;
+}
+
+.user-info {
+  width: 20%;
+}
+
+.place-review-ratings-list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.place-review-ratings-box {
+  padding-right: 25px;
+}
+
+.place-review-ratings-list li {
+  padding-right: 15px;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: -1%;
+  margin-right: auto;
+  border-width: 0.5px;
+  width: 97%;
+}

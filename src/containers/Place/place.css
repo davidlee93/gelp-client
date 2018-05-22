@@ -1,4 +1,7 @@
-.place-result-box {
-    margin-top: 25px;
-    padding-left: 0;
+.place-result {
+  background: #f5f5f5;
 }
+/* .place-result-box {
+  padding-top: 10px;
+  padding-left: 0;
+} */
