@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { setDetailInfo, setPlaceId } from "../../actions/search";
 import { API_BASE_URL } from "../../config";
-import PlaceDetailInfo from "../rest-detail";
+import PlaceDetailInfo from "../place-detail-info";
 import "./place-detail.css";
 
 export class PlaceDetail extends React.Component {
@@ -24,8 +24,7 @@ export class PlaceDetail extends React.Component {
       },
       this.callback
     );
-    if (this.props.placeInfo && this.props.placeInfo.place_id) {
-      this.fetchPhotos(this.props.placeInfo, this.props.placeInfo.place_id);
+    if (this.props.placeInfo.place_id) {
       fetch(`${API_BASE_URL}/ratings/place/${this.props.placeInfo.place_id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -43,10 +42,10 @@ export class PlaceDetail extends React.Component {
   };
   componentWillReceiveProps(nextProps) {
     if (this.props.placeInfo !== nextProps.placeInfo) {
-      this.fetchPhotos(nextProps.placeInfo, nextProps.place_id);
+      this.fetchMapSetPhotos(nextProps.placeInfo, nextProps.place_id);
     }
   }
-  fetchPhotos = (placeInfo, place_id) => {
+  fetchMapSetPhotos = (placeInfo, place_id) => {
     const google = window.google;
     let infowindow = new google.maps.InfoWindow();
     const latLng = {
@@ -78,7 +77,7 @@ export class PlaceDetail extends React.Component {
             map: map,
             position: placeInfo.geometry.location
           });
-          google.maps.event.addListener(marker, "click", function() {
+          google.maps.event.addListener(marker, "mouseover", function() {
             infowindow.setContent(
               "<div><strong>" +
                 place.name +
@@ -103,7 +102,7 @@ export class PlaceDetail extends React.Component {
     const { placeInfo } = this.props;
     const { photos } = this.state;
     const { ratings } = this.state;
-    placeInfo.photos = photos;
+    placeInfo.urls = photos;
     return <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />;
   }
   render() {

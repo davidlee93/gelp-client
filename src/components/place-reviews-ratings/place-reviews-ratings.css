@@ -5,14 +5,26 @@
   margin-right: 5%;
   border-right: 1px solid lightgray;
 }
-
-.place-result-review {
-  display: flex;
-  flex-direction: row;
+.place-result-review-list {
+  border-bottom: 0.1px solid darkgray;
+  margin-right: 25px;
+  padding-right: 10px;
 }
 
-.user-info {
-  width: 20%;
+.place-result-review {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding-top: 10px;
+}
+
+.place-result-review p {
+  font-size: 14px;
+}
+
+.user-name h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
 }
 
 .place-review-ratings-list {
@@ -23,20 +35,15 @@
   margin-top: 0;
 }
 
-.place-review-ratings-box {
-  padding-right: 25px;
-}
-
 .place-review-ratings-list li {
-  padding-right: 15px;
+  margin-right: 15px;
+  border-bottom: 0.1px solid darkgray;
 }
 
-hr {
-  display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: -1%;
-  margin-right: auto;
-  border-width: 0.5px;
-  width: 97%;
+.aggregate-rating {
+  border-right: 0.1px solid darkgray;
+  padding-right: 4px;
+}
+.review-created-date {
+  font-size: 12px;
 }

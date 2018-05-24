@@ -1,3 +1,13 @@
 .search-filler {
   text-align: center;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.filler-line-one {
+  font-size: 22px;
+}
+.filler-line-two {
+  font-size: 12px;
 }

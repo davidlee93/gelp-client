@@ -1,9 +1,10 @@
 .nav-search-box {
-  padding: 12px;
+  padding: 5px;
   background-color: lightblue;
   display: flex;
   justify-content: center;
   padding-right: 20px;
+  align-items: center;
 }
 
 .header-filter-box {
@@ -11,8 +12,8 @@
 }
 
 .search-results-container {
-  margin-left: 12.5%;
-  margin-right: 12.5%;
+  margin-left: 11.5%;
+  margin-right: 11.5%;
   display: flex;
 }
 
@@ -22,6 +23,10 @@
 
 .search-results-box {
   margin-right: 30px;
+}
+
+.search-results-pagination {
+  margin-right: 5%;
 }
 
 .search-results-map-container {

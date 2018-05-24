@@ -7,7 +7,7 @@ import "./place-reviews.css";
 
 export class PlaceReviews extends React.Component {
   state = {
-    ratings: []
+    ratings: null
   };
   componentDidMount() {
     this.props.dispatch(setPlaceId(this.props.place_id));
@@ -21,15 +21,17 @@ export class PlaceReviews extends React.Component {
         .catch(error => console.log(error));
     }
   }
-  renderReviews() {
-    const { placeInfo } = this.props;
-    const { ratings } = this.state;
-    return <PlaceReviewsRatings placeInfo={placeInfo} ratings={ratings} />;
-  }
 
   render() {
+    const { ratings } = this.state;
+    if (!ratings) {
+      return false;
+    }
+
     return (
-      <div className="place-result-reviews-box">{this.renderReviews()}</div>
+      <div className="place-result-reviews-box">
+        <PlaceReviewsRatings ratings={ratings} />
+      </div>
     );
   }
 }

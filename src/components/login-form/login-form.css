@@ -1,16 +1,9 @@
 .login {
-    text-align: center;
+  text-align: center;
 }
 .login-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: 10px auto;   
-}
-.form-input {
-    width: 300px;
-    margin-bottom: 6px;
-}
-.form-input input {
-    width: 150px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 5px auto;
 }

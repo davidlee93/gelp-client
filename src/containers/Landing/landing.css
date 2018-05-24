@@ -1,16 +1,44 @@
+.landing-box {
+  display: flex;
+  height: 525px;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("https://source.unsplash.com/featured/?dessert,food,drinks/");
+  background-position: center;
+  background-color: #333;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  z-index: 2;
+}
+
 .title {
-    font-size: 40px;
-    text-align: center;
-    border-bottom: 1px black solid;
-    padding-bottom: 40px;
+  display: flex;
+  width: 180px;
+  margin: 0 auto;
+  align-self: center;
+  padding-bottom: 25px;
 }
 
 .landing-box-list {
-    list-style-type: none;
-    padding-left: 0;
-    height: 300px;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  padding-left: 0;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  background-color: #afe5f7;
 }
 
-
+.landing-box-list li {
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin: 10px;
+  color: white;
+  padding-left: 0;
+  width: 30%;
+  border: 1px solid black;
+  text-align: center;
+}

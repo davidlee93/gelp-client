@@ -10,7 +10,8 @@ import "./rate.css";
 
 const StyledLink = styled(Link)`
   color: #0073bb;
-  font-family: Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   text-decoration: none;
 
   &:hover {
@@ -24,19 +25,19 @@ export class Rate extends React.Component {
         <header className="rate-header-box">
           <div className="rate-header">
             <Logo />
-            <div className="rate-title">
-              <h4>Write a Review</h4>
+            <div className="rate-header-title">
+              <h2>Write a Review</h2>
             </div>
             <LogOutBar />
           </div>
         </header>
         <section className="rate-section">
           <div className="rate-title">
-            <h2>
+            <h1>
               <StyledLink to={`../place/${this.props.place_id}`}>
                 {this.props.place_name}
               </StyledLink>
-            </h2>
+            </h1>
           </div>
           <RatingForm />
         </section>

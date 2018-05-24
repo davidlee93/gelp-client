@@ -1,0 +1,10 @@
+.search-title {
+  margin: auto 0;
+  width: 175px;
+  text-align: center;
+  padding-bottom: 40px;
+}
+.search-title-link {
+  text-decoration: none;
+  color: black;
+}

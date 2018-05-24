@@ -4,8 +4,8 @@ import "./search-filler.css";
 export default function SearchFiller(props) {
   return (
     <div className="search-filler">
-      <p>Come give us a try,</p>
-      <p> and see where you're going to go next</p>
+      <p className="filler-line-one">Come give us a try,</p>
+      <p className="filler-line-two"> and see where you're going to go next.</p>
     </div>
   );
 }

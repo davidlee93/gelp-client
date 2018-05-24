@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import Header from "../../components/header";
 import LogOutBar from "../../components/logout-bar";
+import SearchLogo from "../../components/search-logo";
 import SearchBar from "../../components/search-bar";
 import SearchFiller from "../../components/search-filler";
 //import requiresLogin from '../../components/requires-login';
@@ -20,8 +20,10 @@ export class Search extends React.Component {
           <LogOutBar />
         </div>
         <div className="search-box">
-          <Header />
-          <SearchBar />
+          <SearchLogo />
+          <div className="search-form-box">
+            <SearchBar />
+          </div>
         </div>
         <div className="search-filler-box">
           <SearchFiller />

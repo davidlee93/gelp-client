@@ -39,27 +39,28 @@ export class SignupForm extends React.Component {
     }
     return (
       <section className="signup-section">
-        <h3>Sign Up for Gelp</h3>
         <form
           className="signup-form"
           onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
         >
           {successMessage}
           {errorMessage}
-          <Field
-            component={Input}
-            type="text"
-            placeholder="First Name"
-            name="firstname"
-            validate={[required, nonEmpty]}
-          />
-          <Field
-            component={Input}
-            type="text"
-            placeholder="Last Name"
-            name="lastname"
-            validate={[required, nonEmpty]}
-          />
+          <div className="name">
+            <Field
+              component={Input}
+              type="text"
+              placeholder="First Name"
+              name="firstname"
+              validate={[required, nonEmpty]}
+            />
+            <Field
+              component={Input}
+              type="text"
+              placeholder="Last Name"
+              name="lastname"
+              validate={[required, nonEmpty]}
+            />
+          </div>
           <Field
             component={Input}
             type="email"
@@ -90,7 +91,7 @@ export class SignupForm extends React.Component {
           />
           <button
             type="submit"
-            className="signup-button"
+            className="submit-button"
             disabled={this.props.pristine || this.props.submitting}
           >
             Sign Up

@@ -1,14 +1,23 @@
-.header-title{
-    margin: auto 0;
-    font-size: 40px;
-    text-align: center;
-    padding-bottom: 40px;
-}
-.header-title-link {
-    text-decoration: none;
-    color: black;
+.header-box {
+  height: 70px;
 }
 
-.hours li {
-    font-size: 15px;
+.header-title-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #afe5f7;
+}
+
+.header-title {
+  margin: auto 0;
+  width: 80px;
+  text-align: center;
+}
+
+.header-title-link {
+  text-decoration: none;
+  color: black;
+  height: 40px;
 }

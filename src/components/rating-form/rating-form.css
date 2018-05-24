@@ -2,6 +2,7 @@
   border: 0.5px solid lightgrey;
   border-radius: 4px;
   padding: 10px;
+  font-size: 18px;
 }
 
 #textarea {
@@ -15,8 +16,6 @@
   color: lightgrey;
 }
 
-input:focus,
-select:focus,
 textarea:focus,
 button:focus {
   outline: none;
@@ -43,20 +42,6 @@ input#pricing {
   margin-right: 12px;
 }
 
-.form-error {
+/* .form-error {
   width: 475px;
-}
-
-.signup-button {
-  background-color: #d32323;
-  border-color: #8d0005;
-  border-radius: 3px;
-  padding: 14px 72px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-}
+} */

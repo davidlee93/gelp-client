@@ -113,7 +113,7 @@ Please don't review this business if you received a freebie for writing this rev
         </div>
         <button
           type="submit"
-          className="signup-button"
+          className="submit-button"
           disabled={this.props.pristine || this.props.submitting}
         >
           Post Review

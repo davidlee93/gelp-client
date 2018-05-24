@@ -1,0 +1,16 @@
+.login-title {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  color: #afe5f7;
+}
+.new-to-gelp h5 {
+  margin-top: 5px;
+}
+.new-signup {
+  display: flex;
+  margin: 0 auto;
+  width: 300px;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: grey;
+}

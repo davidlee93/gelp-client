@@ -1,28 +1,62 @@
 .signup-section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
+
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
 }
+
 .form-input {
-    width: 300px;
-    margin-bottom: 6px;
+  width: 300px;
+  margin-bottom: 8px;
 }
+
 .form-input input {
-    width: 150px;
+  width: 300px;
+  padding: 8px;
+  border-radius: 3px;
+  border: 1px solid darkgray;
+  font-size: 14px;
+  font-weight: 500;
 }
-/* .name {
-    display: flex;
-    width: 300px;
-} 
-.name div {
-    width: 150px;
+
+.name {
+  display: flex;
+  width: 300px;
 }
-#firstName, #lastName {
-    width: 150px;
-} */
+
+#firstname,
+#lastname {
+  width: 147.5px;
+}
+
+#firstname {
+  margin-right: 2.5px;
+}
+
+#lastname {
+  margin-left: 2.5px;
+}
+
+.submit-button {
+  background-color: #d32323;
+  border-color: #8d0005;
+  border-radius: 3px;
+  padding: 14px 72px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #be2020;
+}

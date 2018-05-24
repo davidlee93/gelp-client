@@ -3,7 +3,7 @@ import HoursList from "../hours";
 import PlacePhotos from "../place-photos";
 
 const PlaceDetailInfo = ({ placeInfo, ratings }) => {
-  if (!ratings) {
+  if (!ratings || !placeInfo) {
     return false;
   }
 
@@ -49,10 +49,9 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
                 </h5>
               </div>
               <div className="hours">
-                {placeInfo &&
-                  placeInfo.opening_hours && (
-                    <HoursList hours={placeInfo.opening_hours} />
-                  )}
+                {placeInfo.opening_hours && (
+                  <HoursList hours={placeInfo.opening_hours} />
+                )}
               </div>
             </div>
           </div>
@@ -69,12 +68,14 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
             <p>{placeInfo.formatted_phone_number}</p>
           </div>
           <div className="place-website">
-            <a href={placeInfo.website}>{placeInfo.website.split("//")[1]}</a>
+            <a href={placeInfo.website}>
+              {placeInfo.website && placeInfo.website.split("//")[1]}
+            </a>
           </div>
         </div>
       </div>
       <div className="place-images-box">
-        {placeInfo.photos && <PlacePhotos photos={placeInfo.photos} />}
+        {placeInfo.urls && <PlacePhotos photos={placeInfo.urls} />}
       </div>
     </div>
   );

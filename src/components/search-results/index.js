@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { searchSuccess } from "../../actions/search";
+import { API_BASE_URL } from "../../config";
 import SearchResultResult from "../search-results-result";
 import Spinner from "react-spinkit";
 import "./search-results.css";
@@ -9,7 +10,8 @@ import "./search-results.css";
 export class SearchResults extends React.Component {
   state = {
     findings: null,
-    location: null
+    location: null,
+    ratings: null
   };
   componentDidMount() {
     const google = window.google;
@@ -39,9 +41,9 @@ export class SearchResults extends React.Component {
     function createMarker(place) {
       for (var i = 0; i < place.length; i++) {
         var placeLoc = place[i].geometry.location;
-        var content = `<div><h3>${place[i].name}</h3></div>
-                    <div>${place[i].vicinity}</div>
-                    <br>
+        var content = `<div><h3>${i + 1}. ${place[i].name}</h3></div>
+                    <div>Rating: ${place[i].rating}</div>
+                    <div>${place[i].vicinity}</div>            
                     <div>Open now: ${
                       place[i].opening_hours.open_now ? "Yes" : "No"
                     }</div>`;
@@ -51,9 +53,12 @@ export class SearchResults extends React.Component {
           info: content
         });
 
-        google.maps.event.addListener(marker, "click", function() {
+        google.maps.event.addListener(marker, "mouseover", function() {
           infowindow.setContent(this.info);
           infowindow.open(map, this);
+        });
+        google.maps.event.addListener(marker, "mouseout", function() {
+          infowindow.close();
         });
       }
     }
@@ -61,6 +66,22 @@ export class SearchResults extends React.Component {
 
   callback = (results, status) => {
     this.props.dispatch(searchSuccess(results));
+    const placeIds = results.map(result => {
+      return result.place_id;
+    });
+    const placesParams = placeIds.map(place => {
+      return `places=${place}`;
+    });
+    const request = `/findings?${placesParams.join("&")}`;
+    if (this.props.findings) {
+      fetch(`${API_BASE_URL}/ratings${request}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(ratings => this.setState({ ratings }))
+        .catch(error => console.log(error));
+    }
   };
 
   renderResults() {
@@ -114,9 +135,9 @@ export class SearchResults extends React.Component {
       function createMarker(place) {
         for (var i = 0; i < place.length; i++) {
           var placeLoc = place[i].geometry.location;
-          var content = `<div><h3>${place[i].name}</h3></div>
+          var content = `<div><h3>${i + 1}. ${place[i].name}</h3></div>
+                    <div>Rating: ${place[i].rating}</div>
                     <div>${place[i].vicinity}</div>
-                    <br>
                     <div>Open now: ${
                       place[i].opening_hours.open_now ? "Yes" : "No"
                     }</div>`;

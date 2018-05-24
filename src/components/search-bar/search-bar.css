@@ -1,3 +1,6 @@
+.search-form-box {
+  margin-left: 15px;
+}
 .search-form {
   display: flex;
   justify-content: center;

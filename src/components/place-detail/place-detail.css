@@ -5,6 +5,7 @@
 
 .place-result-detail {
   display: flex;
+  margin-right: -8px;
 }
 
 .place-result-left {
@@ -12,6 +13,7 @@
 }
 
 .place-result-title h2 {
+  font-size: 30px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -50,7 +52,8 @@
 }
 
 .reviews-number {
-  margin: 0;
+  margin-bottom: 0;
+  padding-top: 20px;
 }
 
 .place-result-left-info {
@@ -58,17 +61,15 @@
 }
 
 .place-result-left-info h5 {
-  margin-top: 0;
+  margin-top: 2px;
   margin-bottom: 0;
-}
-
-.hours-list {
-  padding-left: 0;
 }
 
 .place-result-right {
   width: 33%;
   margin-top: 10px;
+  background: #fff;
+  padding-bottom: 10px;
 }
 
 .place-result-map {
@@ -84,7 +85,7 @@
 }
 
 .place-ratings-list li {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .write-a-review-button {
@@ -92,7 +93,7 @@
   border-color: #8d0005;
   border-radius: 3px;
   padding: 9px 18px;
-  margin-top: 10px;
+  margin-top: 5px;
   text-decoration: none;
   color: white;
   font-weight: bold;
@@ -100,14 +101,24 @@
   cursor: pointer;
 }
 
+.open-closed h5 {
+  font-size: 15px;
+}
+
 .hours-list {
+  padding-left: 0;
   list-style-type: none;
   margin-top: 0;
 }
 
-.hours-list li {
+.hours-list tr {
   font-size: 14px;
 }
+
+.hours-list th {
+  text-align: left;
+}
+
 .place-address p,
 .place-number p {
   margin-top: 0;
@@ -115,7 +126,7 @@
   font-size: 14px;
 }
 .place-website {
-  margin-top: -8px;
+  margin-top: -2px;
 }
 .place-website a {
   text-decoration: none;

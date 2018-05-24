@@ -1,4 +1,4 @@
-export const required = value => (value ? undefined : "Required");
+export const required = value => (value ? undefined : "*Required Field");
 export const nonEmpty = value =>
   value.trim() !== "" ? undefined : "Cannot be empty";
 export const isTrimmed = value =>
@@ -14,6 +14,6 @@ export const length = length => value => {
 export const matches = field => (value, allValues) =>
   field in allValues && value.trim() === allValues[field].trim()
     ? undefined
-    : "Does not match";
+    : "Password does not match";
 export const email = value =>
   /^\S+@\S+$/.test(value) ? undefined : "Must be a valid email address";

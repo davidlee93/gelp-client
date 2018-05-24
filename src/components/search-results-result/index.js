@@ -36,7 +36,7 @@ const SearchResultResult = ({ findings }) => {
       </div>
     </li>
   ));
-  return <ul className="restaurant-search-results">{restaurants}</ul>;
+  return restaurants;
 };
 
 export default SearchResultResult;

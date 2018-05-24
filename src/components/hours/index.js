@@ -3,14 +3,19 @@ import React from "react";
 export default function HoursList(props) {
   const { hours } = props;
   const hoursList = hours.weekday_text.map((hour, index) => (
-    <li key={index}>
-      {hour
-        .replace("rsday", "")
-        .replace("urday", "")
-        .replace("nesday", "")
-        .replace("sday", "")
-        .replace("day", "")}
-    </li>
+    <tbody key={index}>
+      <tr>
+        <th>
+          {hour
+            .split("day:")[0]
+            .replace("rs", "")
+            .replace("ur", "")
+            .replace("nes", "")
+            .replace("s", "")}:
+        </th>
+        <td>{hour.split("day:")[1]}</td>
+      </tr>
+    </tbody>
   ));
-  return <ul className="hours-list">{hoursList}</ul>;
+  return <table className="hours-list">{hoursList}</table>;
 }

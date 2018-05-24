@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
     return (
       <footer>
         <div className="footer">
-          <p>Built by David Lee</p>
+          {/* <p>Built by David Lee</p> */}
           <a
             href="https://github.com/davidlee93/gelp-client"
             target="_blank"
