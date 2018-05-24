@@ -1,43 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
-import { setPlaceId } from "../../actions/search";
-import { API_BASE_URL } from "../../config";
-import PlaceReviewsRatings from "../place-reviews-ratings";
+import Rating from "../place-reviews-rating";
 import "./place-reviews.css";
 
-export class PlaceReviews extends React.Component {
-  state = {
-    ratings: null
-  };
-  componentDidMount() {
-    this.props.dispatch(setPlaceId(this.props.place_id));
-    if (this.props.placeInfo.place_id) {
-      fetch(`${API_BASE_URL}/ratings/place/${this.props.placeInfo.place_id}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-      })
-        .then(response => response.json())
-        .then(ratings => this.setState({ ratings }))
-        .catch(error => console.log(error));
-    }
+const PlaceReviews = ({ ratings }) => {
+  if (!ratings) {
+    return false;
   }
+  const avgRating = ratings.map(rating => {
+    return ((rating.quantity + rating.quality + rating.pricing) / 3).toFixed(1);
+  });
+  const placeRatings = ratings.map((rating, index) => (
+    <Rating rating={rating} key={index} avgRating={avgRating[index]} />
+  ));
+  return <ul className="place-result-reviews">{placeRatings}</ul>;
+};
 
-  render() {
-    const { ratings } = this.state;
-    if (!ratings) {
-      return false;
-    }
-
-    return (
-      <div className="place-result-reviews-box">
-        <PlaceReviewsRatings ratings={ratings} />
-      </div>
-    );
-  }
-}
-
-const mapStateToProps = state => ({
-  placeInfo: state.search.placeInfo
-});
-
-export default connect(mapStateToProps)(PlaceReviews);
+export default PlaceReviews;

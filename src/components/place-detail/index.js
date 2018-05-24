@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setDetailInfo, setPlaceId } from "../../actions/search";
 import { API_BASE_URL } from "../../config";
 import PlaceDetailInfo from "../place-detail-info";
+import PlaceReviews from "../place-reviews";
 import "./place-detail.css";
 
 export class PlaceDetail extends React.Component {
@@ -10,41 +11,6 @@ export class PlaceDetail extends React.Component {
     photos: false,
     ratings: []
   };
-  componentDidMount() {
-    this.props.dispatch(setPlaceId(this.props.place_id));
-    const id = this.props.place_id;
-    const google = window.google;
-
-    var map = document.getElementById("map");
-    var service = new google.maps.places.PlacesService(map);
-
-    service.getDetails(
-      {
-        placeId: id
-      },
-      this.callback
-    );
-    if (this.props.placeInfo.place_id) {
-      fetch(`${API_BASE_URL}/ratings/place/${this.props.placeInfo.place_id}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-      })
-        .then(response => response.json())
-        .then(ratings => this.setState({ ratings }))
-        .catch(error => console.log(error));
-    }
-  }
-  callback = (place, status) => {
-    const google = window.google;
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      this.props.dispatch(setDetailInfo(place));
-    }
-  };
-  componentWillReceiveProps(nextProps) {
-    if (this.props.placeInfo !== nextProps.placeInfo) {
-      this.fetchMapSetPhotos(nextProps.placeInfo, nextProps.place_id);
-    }
-  }
   fetchMapSetPhotos = (placeInfo, place_id) => {
     const google = window.google;
     let infowindow = new google.maps.InfoWindow();
@@ -98,15 +64,60 @@ export class PlaceDetail extends React.Component {
       }
     );
   };
+
+  callback = (place, status) => {
+    const google = window.google;
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      this.props.dispatch(setDetailInfo(place));
+      fetch(`${API_BASE_URL}/ratings/place/${place.place_id}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(ratings => this.setState({ ratings }))
+        .catch(error => console.log(error));
+    }
+  };
+
+  componentDidMount() {
+    this.props.dispatch(setPlaceId(this.props.place_id));
+    const id = this.props.place_id;
+    const google = window.google;
+
+    var map = document.getElementById("map");
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails(
+      {
+        placeId: id
+      },
+      this.callback
+    );
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.placeInfo !== nextProps.placeInfo) {
+      this.fetchMapSetPhotos(nextProps.placeInfo, nextProps.place_id);
+    }
+  }
+
   renderResult() {
     const { placeInfo } = this.props;
     const { photos } = this.state;
     const { ratings } = this.state;
     placeInfo.urls = photos;
-    return <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />;
+    return (
+      <div className="place-result">
+        <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
+        <div className="place-result-reviews-box">
+          <PlaceReviews ratings={ratings} />
+        </div>
+      </div>
+    );
   }
+
   render() {
-    return <div className="place-result">{this.renderResult()}</div>;
+    return <div className="place-result-container">{this.renderResult()}</div>;
   }
 }
 

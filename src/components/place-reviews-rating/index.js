@@ -1,15 +1,4 @@
 import React from "react";
-import "./place-reviews-ratings.css";
-
-const PlaceReviewsRatings = ({ ratings }) => {
-  const avgRating = ratings.map(rating => {
-    return ((rating.quantity + rating.quality + rating.pricing) / 3).toFixed(1);
-  });
-  const placeRatings = ratings.map((rating, index) => (
-    <Rating rating={rating} key={index} avgRating={avgRating[index]} />
-  ));
-  return <ul className="place-result-reviews">{placeRatings}</ul>;
-};
 
 const Rating = ({ rating, avgRating }) => {
   return (
@@ -30,7 +19,7 @@ const Rating = ({ rating, avgRating }) => {
         </div>
         <div className="place-review-ratings-box">
           <ul className="place-review-ratings-list">
-            <li className="aggregate-rating">Rating: {avgRating}</li>
+            <li className="place-aggregate-rating">Rating: {avgRating}</li>
             <li>Quantity: {rating.quantity}</li>
             <li>Quality: {rating.quality}</li>
             <li>Pricing: {rating.pricing}</li>
@@ -41,4 +30,4 @@ const Rating = ({ rating, avgRating }) => {
     </li>
   );
 };
-export default PlaceReviewsRatings;
+export default Rating;
