@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm, focus } from "redux-form";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { postRating } from "../../actions/rating";
 import Input from "../input";
@@ -40,6 +41,7 @@ export class RatingForm extends React.Component {
       successMessage = (
         <div className="message message-success">Review posted</div>
       );
+      this.props.history.push(`/place/${this.props.place_id}`);
     }
     let errorMessage;
     if (this.props.error) {
@@ -133,4 +135,4 @@ RatingForm = reduxForm({
     dispatch(focus("ratings", Object.keys(errors)[0]))
 })(RatingForm);
 
-export default connect(mapStateToProps)(RatingForm);
+export default withRouter(connect(mapStateToProps)(RatingForm));

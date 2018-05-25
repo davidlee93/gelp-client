@@ -10,7 +10,7 @@
   border-right: 1px solid lightgray;
 }
 .place-result-review-list {
-  border-bottom: 0.1px solid darkgray;
+  border-bottom: 0.1px solid lightgray;
   margin-right: 25px;
   padding-right: 10px;
 }
@@ -18,7 +18,8 @@
 .place-result-review {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  padding-top: 10px;
+  padding-top: 25px;
+  padding-bottom: 15px;
 }
 
 .place-result-review p {

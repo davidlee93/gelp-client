@@ -1,0 +1,48 @@
+.place-result-reviews-filler {
+  padding-left: 0;
+  margin-left: 16.5%;
+  margin-right: 16.5%;
+  border-right: 1px solid lightgray;
+}
+
+.place-result-review-filler {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-bottom: 0.1px solid lightgray;
+}
+
+.place-result-review-filler p {
+  font-size: 14px;
+}
+
+.user-name-filler h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.place-review-ratings-list-filler {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+
+.place-result-review-list-filler {
+  margin-right: 25px;
+  padding-right: 10px;
+  list-style-type: none;
+}
+
+.place-review-ratings-list-filler li {
+  border-bottom: 0.1px solid darkgray;
+  margin-right: 15px;
+}
+
+.place-aggregate-rating-filler {
+  border-right: 0.1px solid darkgray;
+  padding-right: 4px;
+}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import FindingsImage from "../findings-image";
 import SearchResultsRatings from "../search-results-ratings";
 import SearchResultsInfo from "../search-results-info";
 import styled from "styled-components";
@@ -14,12 +15,10 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const SearchResultResult = ({ findings }) => {
+const SearchResultResult = ({ photos, findings }) => {
   const restaurants = findings.map((restaurant, index) => (
     <li className="search-results" key={index}>
-      <div className="img">
-        <img src={restaurant.icon} alt="icon" />
-      </div>
+      {findings && <FindingsImage info={restaurant} />}
       <div className="info">
         <div className="info-title">
           <span className="index">{index + 1}. </span>

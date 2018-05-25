@@ -38,9 +38,9 @@ export class Findings extends React.Component {
             <div className="search-results-box">
               {this.props.search.findings && <SearchResults />}
             </div>
-            <div className="search-results-pagination">
+            {/* <div className="search-results-pagination">
               <Pagination />
-            </div>
+            </div> */}
           </div>
           <div className="search-results-map-container">
             <div className="search-results-map" id="map" />

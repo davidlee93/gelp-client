@@ -51,6 +51,7 @@ i .info h5,
 .info-place {
   display: flex;
   flex-direction: row;
+  margin-top: 3px;
 }
 
 .info-place-ratings {

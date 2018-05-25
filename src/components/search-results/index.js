@@ -4,14 +4,15 @@ import { withRouter } from "react-router-dom";
 import { searchSuccess } from "../../actions/search";
 import { API_BASE_URL } from "../../config";
 import SearchResultResult from "../search-results-result";
-import Spinner from "react-spinkit";
 import "./search-results.css";
+import SearchResultsRatings from "../search-results-ratings";
 
 export class SearchResults extends React.Component {
   state = {
     findings: null,
     location: null,
-    ratings: null
+    ratings: null,
+    photos: null
   };
   componentDidMount() {
     const google = window.google;
@@ -45,7 +46,11 @@ export class SearchResults extends React.Component {
                     <div>Rating: ${place[i].rating}</div>
                     <div>${place[i].vicinity}</div>            
                     <div>Open now: ${
-                      place[i].opening_hours.open_now ? "Yes" : "No"
+                      place &&
+                      place[i].opening_hours &&
+                      place[i].opening_hours.open_now
+                        ? "Yes"
+                        : "No"
                     }</div>`;
         var marker = new google.maps.Marker({
           map: map,
@@ -63,39 +68,29 @@ export class SearchResults extends React.Component {
       }
     }
   }
-
   callback = (results, status) => {
     this.props.dispatch(searchSuccess(results));
+    const placePhotos = results.map(result => {
+      return result.photos;
+    });
+    this.setState({ photos: placePhotos });
     const placeIds = results.map(result => {
       return result.place_id;
     });
     const placesParams = placeIds.map(place => {
       return `places=${place}`;
     });
-    const request = `/findings?${placesParams.join("&")}`;
-    if (this.props.findings) {
-      fetch(`${API_BASE_URL}/ratings${request}`, {
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-      })
-        .then(response => response.json())
-        .then(ratings => this.setState({ ratings }))
-        .catch(error => console.log(error));
-    }
+    // const request = `/findings?${placesParams.join("&")}`;
+    // if (this.props.findings) {
+    //   fetch(`${API_BASE_URL}/ratings${request}`, {
+    //     method: "GET",
+    //     headers: { "Content-Type": "application/json" }
+    //   })
+    //     .then(response => response.json())
+    //     .then(ratings => this.setState({ ratings }))
+    //     .catch(error => console.log(error));
+    // }
   };
-
-  renderResults() {
-    if (this.props.loading) {
-      return <Spinner spinnerName="circle" noFadeIn />;
-    }
-
-    if (this.props.error) {
-      return <strong>{this.props.error}</strong>;
-    }
-    const { findings } = this.props;
-
-    return <SearchResultResult findings={findings} />;
-  }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.findings !== nextProps.findings) {
@@ -156,11 +151,21 @@ export class SearchResults extends React.Component {
     }
   }
 
+  renderResults() {
+    const { findings } = this.props;
+    return (
+      <SearchResultResult photos={this.state.photos} findings={findings} />
+    );
+  }
   render() {
     if (!this.props.findings) {
       return false;
     }
-    return <ul className="search-results-list">{this.renderResults()}</ul>;
+    return (
+      <ul className="search-results-list">
+        {this.state.photos && this.props.findings && this.renderResults()}
+      </ul>
+    );
   }
 }
 

@@ -1,0 +1,20 @@
+.findings-image {
+  padding-right: 10px;
+  padding-bottom: 5px;
+  height: 120px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-right: 5px;
+}
+
+.findings-image img {
+  border-radius: 4px;
+  min-width: 120px;
+  min-height: 120px;
+  width: auto;
+  height: auto;
+  max-width: 120px;
+  min-height: 120px;
+}

@@ -1,11 +1,11 @@
 .place-result-detail-box {
-  margin-left: 12.5%;
-  margin-right: 12.5%;
+  background: #f5f5f5;
 }
 
 .place-result-detail {
   display: flex;
-  margin-right: -8px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
 }
 
 .place-result-left {
@@ -20,6 +20,8 @@
 
 .place-images-box {
   margin-top: 25px;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
 }
 
 .place-images {
@@ -70,6 +72,7 @@
   margin-top: 10px;
   background: #fff;
   padding-bottom: 10px;
+  margin-left: 1%;
 }
 
 .place-result-map {
