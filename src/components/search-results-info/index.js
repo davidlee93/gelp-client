@@ -1,4 +1,5 @@
 import React from "react";
+import Spinner from "react-spinkit";
 
 export default function SearchResultsInfo(props) {
   const { info } = props;
@@ -12,7 +13,7 @@ export default function SearchResultsInfo(props) {
           <p style={{ color: "#ff0000" }}>Closed now</p>
         )}
       </div>
-      <p className="reviews-number"> 1 Reviews </p>
+      <p className="reviews-number">{info.count || 0} Reviews</p>
     </div>
   );
 }

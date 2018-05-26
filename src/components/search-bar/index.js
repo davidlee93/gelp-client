@@ -1,10 +1,13 @@
 import React from "react";
+
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 //import Spinner from 'react-spinkit';
 import { setKeyword, setNear, setLocation } from "../../actions/search";
 
 import "./search-bar.css";
+const { GOOGLE_API_KEY } = require("../../config");
+require("dotenv").config();
 
 export class SearchBar extends React.Component {
   state = {
@@ -17,7 +20,7 @@ export class SearchBar extends React.Component {
     this.props.dispatch(setNear(this.state.near));
     const geocode = this.state.near;
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?&address=${geocode}&key=AIzaSyDqCUlkl2tTiCdR4VesmoMW47j7mLRTbhM`
+      `https://maps.googleapis.com/maps/api/geocode/json?&address=${geocode}&key=${GOOGLE_API_KEY}`
     )
       .then(res => res.json())
       .then(response => {

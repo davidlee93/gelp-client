@@ -4,17 +4,20 @@ import { withRouter } from "react-router-dom";
 import { searchSuccess } from "../../actions/search";
 import { API_BASE_URL } from "../../config";
 import SearchResultResult from "../search-results-result";
+import Spinner from "react-spinkit";
 import "./search-results.css";
-import SearchResultsRatings from "../search-results-ratings";
+import { consolidateStreamedStyles } from "styled-components";
 
 export class SearchResults extends React.Component {
   state = {
     findings: null,
     location: null,
     ratings: null,
-    photos: null
+    photos: null,
+    loading: false
   };
   componentDidMount() {
+    this.setState({ loading: true });
     const google = window.google;
 
     var map;
@@ -80,16 +83,61 @@ export class SearchResults extends React.Component {
     const placesParams = placeIds.map(place => {
       return `places=${place}`;
     });
-    // const request = `/findings?${placesParams.join("&")}`;
-    // if (this.props.findings) {
-    //   fetch(`${API_BASE_URL}/ratings${request}`, {
-    //     method: "GET",
-    //     headers: { "Content-Type": "application/json" }
-    //   })
-    //     .then(response => response.json())
-    //     .then(ratings => this.setState({ ratings }))
-    //     .catch(error => console.log(error));
-    // }
+    const request = `/findings?${placesParams.join("&")}`;
+    if (this.props.findings) {
+      console.log("fetching ratings");
+      fetch(`${API_BASE_URL}/ratings${request}`, {
+        method: "GET",
+        headers: { "Content-Type": "application/json" }
+      })
+        .then(response => response.json())
+        .then(ratingsArray => {
+          if (ratingsArray.length > 0) {
+            const { findings } = this.props;
+            const newFindings = findings.map(finding => {
+              const targetId = finding.place_id;
+              for (let i = 0; i < ratingsArray.length; i++) {
+                if (ratingsArray[i]._id === targetId) {
+                  console.log(ratingsArray[i].avgPricing);
+                  ratingsArray[i].avgPricing = ratingsArray[
+                    i
+                  ].avgPricing.toFixed(1);
+                  ratingsArray[i].avgQuantity = ratingsArray[
+                    i
+                  ].avgQuantity.toFixed(1);
+                  ratingsArray[i].avgQuality = ratingsArray[
+                    i
+                  ].avgQuality.toFixed(1);
+                  ratingsArray[i].avgRating = (
+                    (parseFloat(ratingsArray[i].avgQuantity) +
+                      parseFloat(ratingsArray[i].avgQuality) +
+                      parseFloat(ratingsArray[i].avgPricing)) /
+                    3
+                  ).toFixed(1);
+                  return Object.assign({}, finding, ratingsArray[i]);
+                }
+              }
+              return finding;
+            });
+            this.setState({ findings: newFindings });
+          }
+        })
+
+        //   const { findings } = this.props;
+        //   const newFindings = findings.map(finding => {
+        //     const targetId = finding.place_id;
+        //     const ratings = ratingsArray.find(
+        //       ratings => (ratings._id = targetId)
+        //     );
+        //     console.log(ratings);
+        //     return Object.assign({}, finding, ratings);
+        //   });
+        //   this.setState({ findings: newFindings });
+        //   //TODO CHANGE ABOVE TO MAP PROPERLY
+
+        // })
+        .catch(error => console.log(error));
+    }
   };
 
   componentWillReceiveProps(nextProps) {
@@ -134,7 +182,9 @@ export class SearchResults extends React.Component {
                     <div>Rating: ${place[i].rating}</div>
                     <div>${place[i].vicinity}</div>
                     <div>Open now: ${
-                      place[i].opening_hours.open_now ? "Yes" : "No"
+                      place[i].opening_hours && place[i].opening_hours.open_now
+                        ? "Yes"
+                        : "No"
                     }</div>`;
           var marker = new google.maps.Marker({
             map: map,
@@ -151,19 +201,20 @@ export class SearchResults extends React.Component {
     }
   }
 
-  renderResults() {
-    const { findings } = this.props;
-    return (
-      <SearchResultResult photos={this.state.photos} findings={findings} />
-    );
-  }
   render() {
     if (!this.props.findings) {
-      return false;
+      return <Spinner />;
     }
+    const { findings } = this.state;
     return (
       <ul className="search-results-list">
-        {this.state.photos && this.props.findings && this.renderResults()}
+        {this.state.photos &&
+          this.props.findings && (
+            <SearchResultResult
+              photos={this.state.photos}
+              findings={findings}
+            />
+          )}
       </ul>
     );
   }
@@ -175,3 +226,5 @@ const mapStateToProps = state => ({
   findings: state.search.findings
 });
 export default withRouter(connect(mapStateToProps)(SearchResults));
+
+//TODO GET SPINNERS GOIN

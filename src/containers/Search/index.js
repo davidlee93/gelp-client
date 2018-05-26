@@ -4,7 +4,7 @@ import LogOutBar from "../../components/logout-bar";
 import SearchLogo from "../../components/search-logo";
 import SearchBar from "../../components/search-bar";
 import SearchFiller from "../../components/search-filler";
-//import requiresLogin from '../../components/requires-login';
+import requiresLogin from "../../components/requires-login";
 import "./search.css";
 import { fetchProtectedData } from "../../actions/protected-data";
 
@@ -34,12 +34,7 @@ export class Search extends React.Component {
 }
 
 const mapStateToProps = state => {
-  // const {currentUser} = state.auth;
-  return {
-    // email: state.auth.currentUser.email,
-    // name: `${currentUser.firstName} ${currentUser.lastName}`,
-    protectedData: state.protectedData.data
-  };
+  loggedIn: state.auth.currentUser !== null;
 };
-export default connect(mapStateToProps)(Search);
-// export default requiresLogin()(connect(mapStateToProps)(Search));
+// export default connect(mapStateToProps)(Search);
+export default requiresLogin()(connect(mapStateToProps)(Search));

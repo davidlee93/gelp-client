@@ -9,10 +9,12 @@ export class FindingsImage extends React.Component {
     if (!this.props.info) {
       return false;
     }
-    const url = this.props.info.photos[0].getUrl({
-      maxWidth: 250,
-      maxHeight: 250
-    });
+    const url = !this.props.info.photos
+      ? "https:/placehold.it/250?text=No%Images/fff/000"
+      : this.props.info.photos[0].getUrl({
+          maxWidth: 250,
+          maxHeight: 250
+        });
 
     return (
       <div className="findings-image">

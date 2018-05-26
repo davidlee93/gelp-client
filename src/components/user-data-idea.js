@@ -30,6 +30,23 @@ export const userReducer = (state=initialState, action) => {
 };
 
 RATINGS DATA PARTIAL WORK
+REDUCE METHOD 
+//
+const euros = [29.76, 41.85, 46.5];
+const average = euros.reduce((total, amount, index, array) => {
+  total += amount;
+  if( index === array.length-1) { 
+    return total/array.length;
+  }else { 
+    return total;
+  }
+});
+OR
+let sum = data.reduce((acc, val) => {
+  return val.country == 'China' ? acc : acc + val.pop;
+}, 0);
+//
+
   {q: 7},
   {q: 18}
   25/2
@@ -44,4 +61,36 @@ RATINGS DATA PARTIAL WORK
 
   const rating = {quality: ratings[0] + ratings[1] / 2} || {};
 
+ const avgQuantity = ratings.reduce((quantity, rating, index, array) => {
+    quantity += rating.quantity;
+    if (index === array.length - 1) {
+      return quantity / array.length;
+    } else {
+      return quantity;
+    }
+  }, 0);
+  const avgQuality = ratings.reduce((quality, rating, index, array) => {
+    quality += rating.quality;
+    if (index === array.length - 1) {
+      return quality / array.length;
+    } else {
+      return quality;
+    }
+  }, 0);
+  const avgPricing = ratings.reduce((pricing, rating, index, array) => {
+    pricing += rating.pricing;
+    if (index === array.length - 1) {
+      return pricing / array.length;
+    } else {
+      return pricing;
+    }
+  }, 0);
+  const avgRating = ((avgQuantity + avgQuality + avgPricing) / 3).toFixed(1);
+
 */
+// placeIds = ['1234', '12341']
+// const places = placeIds.map(place => {
+//     return `places[]=${placeId}`
+// })
+
+// reqeust = `findings?${places.join('&')}`

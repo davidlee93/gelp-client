@@ -64,7 +64,7 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
               <div className="open-closed">
                 <h5>
                   Hours -
-                  {placeInfo.opening_hours.open_now ? (
+                  {placeInfo ? (
                     <span style={{ color: "#00ff00" }}> Open now</span>
                   ) : (
                     <span style={{ color: "#ff0000" }}> Closed now</span>

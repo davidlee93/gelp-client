@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-//import requiresLogin from '../../components/requires-login';
+import requiresLogin from "../../components/requires-login";
 import SearchBar from "../../components/search-bar";
 import Logo from "../../components/logo";
 import LogOutBar from "../../components/logout-bar";
@@ -22,7 +22,6 @@ export class Place extends React.Component {
         </div>
         <div className="place-result-box">
           <PlaceDetail place_id={this.props.match.params.id} />
-          <PlaceReviews place_id={this.props.match.params.id} />
         </div>
       </div>
     );
@@ -32,4 +31,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 export default withRouter(connect(mapStateToProps)(Place));
-// export default requiresLogin()(connect(Place));
+// export default requiresLogin()(connect(mapStateToProps)(Search));

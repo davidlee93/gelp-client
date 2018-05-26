@@ -122,10 +122,6 @@ export class PlaceDetail extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  keyword: state.search.keyword,
-  near: state.search.near,
-  location: state.search.location,
-  id: state.search.id,
   placeInfo: state.search.placeInfo
 });
 export default connect(mapStateToProps)(PlaceDetail);
