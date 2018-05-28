@@ -14,6 +14,7 @@ export class SearchBar extends React.Component {
     keyword: this.props.search.keyword,
     near: this.props.search.near
   };
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.dispatch(setKeyword(this.state.keyword));
@@ -72,8 +73,8 @@ export class SearchBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  keyword: state.keyword,
-  near: state.near,
+  // keyword: state.keyword,
+  // near: state.near,
   location: state.location,
   search: state.search,
   loading: state.loading,

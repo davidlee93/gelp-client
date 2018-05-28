@@ -51,5 +51,4 @@ const mapStateToProps = state => ({
   loggedIn: state.auth.currentUser !== null
 });
 
-export default withRouter(connect(mapStateToProps)(Rate));
-// export default requiresLogin()(connect(mapStateToProps)(Search));
+export default withRouter(requiresLogin()(connect(mapStateToProps)(Rate)));

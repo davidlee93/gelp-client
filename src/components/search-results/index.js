@@ -85,7 +85,6 @@ export class SearchResults extends React.Component {
     });
     const request = `/findings?${placesParams.join("&")}`;
     if (this.props.findings) {
-      console.log("fetching ratings");
       fetch(`${API_BASE_URL}/ratings${request}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -98,7 +97,6 @@ export class SearchResults extends React.Component {
               const targetId = finding.place_id;
               for (let i = 0; i < ratingsArray.length; i++) {
                 if (ratingsArray[i]._id === targetId) {
-                  console.log(ratingsArray[i].avgPricing);
                   ratingsArray[i].avgPricing = ratingsArray[
                     i
                   ].avgPricing.toFixed(1);

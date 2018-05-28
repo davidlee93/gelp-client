@@ -27,8 +27,7 @@ export class Place extends React.Component {
     );
   }
 }
-const mapStateToProps = state => ({
-  loggedIn: state.auth.currentUser !== null
-});
-export default withRouter(connect(mapStateToProps)(Place));
-// export default requiresLogin()(connect(mapStateToProps)(Search));
+const mapStateToProps = state => {
+  loggedIn: state.auth.currentUser !== null;
+};
+export default withRouter(requiresLogin()(connect(mapStateToProps)(Place)));

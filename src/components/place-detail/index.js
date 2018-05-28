@@ -59,7 +59,7 @@ export class PlaceDetail extends React.Component {
             );
             infowindow.open(map, this);
           });
-          this.setState({ photos: place.photos });
+          // this.setState({ photos: place.photos });
         }
       }
     );
@@ -69,6 +69,7 @@ export class PlaceDetail extends React.Component {
     const google = window.google;
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       this.props.dispatch(setDetailInfo(place));
+      this.setState({ photos: place.photos });
       fetch(`${API_BASE_URL}/ratings/place/${place.place_id}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" }
@@ -101,23 +102,21 @@ export class PlaceDetail extends React.Component {
     }
   }
 
-  renderResult() {
+  render() {
     const { placeInfo } = this.props;
     const { photos } = this.state;
     const { ratings } = this.state;
     placeInfo.urls = photos;
     return (
-      <div className="place-result">
-        <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
-        <div className="place-result-reviews-box">
-          <PlaceReviews ratings={ratings} />
-        </div>
+      <div className="place-result-container">
+        <div className="place-result">
+          <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
+          <div className="place-result-reviews-box">
+            <PlaceReviews ratings={ratings} />
+          </div>
+        </div>]
       </div>
     );
-  }
-
-  render() {
-    return <div className="place-result-container">{this.renderResult()}</div>;
   }
 }
 
@@ -125,3 +124,41 @@ const mapStateToProps = state => ({
   placeInfo: state.search.placeInfo
 });
 export default connect(mapStateToProps)(PlaceDetail);
+
+// renderResult() {
+//   const { placeInfo } = this.props;
+//   const { photos } = this.state;
+//   const { ratings } = this.state;
+//   placeInfo.urls = photos;
+//   return (
+//     <div className="place-result">
+//       <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
+//       <div className="place-result-reviews-box">
+//         <PlaceReviews ratings={ratings} />
+//       </div>
+//     </div>
+//   );
+// }
+
+// render() {
+//   return <div className="place-result-container">{this.renderResult()}</div>;
+// }
+
+//       OR
+//
+// render() {
+//   const { placeInfo } = this.props;
+//   const { photos } = this.state;
+//   const { ratings } = this.state;
+//   placeInfo.urls = photos;
+//   return (
+//     <div className="place-result-container">
+//       <div className="place-result">
+//         <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
+//         <div className="place-result-reviews-box">
+//           <PlaceReviews ratings={ratings} />
+//         </div>
+//       </div>]
+//     </div>
+//   );
+// }
