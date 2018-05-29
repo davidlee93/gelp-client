@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from "react-spinkit";
 
 export default function SearchResultsInfo(props) {
   const { info } = props;

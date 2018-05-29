@@ -6,7 +6,6 @@ import SearchBar from "../../components/search-bar";
 import SearchFiller from "../../components/search-filler";
 import requiresLogin from "../../components/requires-login";
 import "./search.css";
-import { fetchProtectedData } from "../../actions/protected-data";
 
 export class Search extends React.Component {
   render() {
@@ -29,7 +28,4 @@ export class Search extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  loggedIn: state.auth.currentUser !== null;
-};
-export default requiresLogin()(connect(mapStateToProps)(Search));
+export default requiresLogin()(connect()(Search));

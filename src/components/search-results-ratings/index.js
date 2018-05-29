@@ -6,9 +6,9 @@ export class SearchResultsRatings extends React.Component {
     avgRating: null
   };
 
-  componentDidMount() {
-    const { info } = this.props;
-  }
+  // componentDidMount() {
+  //   const { info } = this.props;
+  // }
   componentWillReceiveProps(nextProps) {
     if (this.props.info !== nextProps.info) {
       this.setState({

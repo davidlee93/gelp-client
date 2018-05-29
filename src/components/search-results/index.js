@@ -5,9 +5,7 @@ import { searchSuccess } from "../../actions/search";
 import { API_BASE_URL } from "../../config";
 import SearchResultResult from "../search-results-result";
 import Spinner from "react-spinkit";
-
 import "./search-results.css";
-import { consolidateStreamedStyles } from "styled-components";
 
 export class SearchResults extends React.Component {
   state = {

@@ -6,7 +6,7 @@ import SearchBar from "../../components/search-bar";
 import Logo from "../../components/logo";
 import LogOutBar from "../../components/logout-bar";
 import PlaceDetail from "../../components/place-detail";
-import PlaceReviews from "../../components/place-reviews";
+
 import "./place.css";
 
 export class Place extends React.Component {
@@ -27,7 +27,5 @@ export class Place extends React.Component {
     );
   }
 }
-const mapStateToProps = state => {
-  loggedIn: state.auth.currentUser !== null;
-};
-export default withRouter(requiresLogin()(connect(mapStateToProps)(Place)));
+
+export default withRouter(requiresLogin()(connect()(Place)));

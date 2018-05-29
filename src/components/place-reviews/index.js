@@ -1,6 +1,6 @@
 import React from "react";
 import Rating from "../place-reviews-rating";
-import RatingFiller from "../place-reviews-rating-filler";
+// import RatingFiller from "../place-reviews-rating-filler";
 import "./place-reviews.css";
 
 const PlaceReviews = ({ ratings }) => {
