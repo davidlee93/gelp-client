@@ -12,12 +12,12 @@ describe("Reducer", () => {
   it("Should set the initial state when nothing is passed in", () => {
     const state = reducer(undefined, { type: "__UNKNOWN" });
 
-    expect(state.search.keyword).toEqual("");
-    expect(state.search.near).toEqual("");
-    expect(state.search.location).toEqual("");
-    expect(state.search.id).toEqual("");
-    expect(state.search.placeInfo).toEqual({});
-    expect(state.search.findings).toEqual([]);
+    expect(state.keyword).toEqual("");
+    expect(state.near).toEqual("");
+    expect(state.location).toEqual("");
+    expect(state.id).toEqual("");
+    expect(state.placeInfo).toEqual({});
+    expect(state.findings).toEqual([]);
   });
 
   it("Should return the current state on an unknown action", () => {

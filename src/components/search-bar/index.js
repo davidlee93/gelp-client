@@ -10,10 +10,13 @@ const { GOOGLE_API_KEY } = require("../../config");
 require("dotenv").config();
 
 export class SearchBar extends React.Component {
-  state = {
-    keyword: this.props.search.keyword,
-    near: this.props.search.near
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      keyword: this.props.search.keyword,
+      near: this.props.search.near
+    };
+  }
 
   handleSubmit(e) {
     e.preventDefault();

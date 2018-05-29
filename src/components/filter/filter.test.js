@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Place from "./index";
+import { Filter } from "./index";
 
-describe("<Place />", () => {
+describe("<Filter />", () => {
   it("Should render without crashing", () => {
-    shallow(<Place place_id="123test" />);
+    shallow(<Filter />);
   });
 });

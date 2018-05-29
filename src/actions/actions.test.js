@@ -1,5 +1,5 @@
 import {
-  SET_Keyword,
+  SET_KEYWORD,
   setKeyword,
   SET_NEAR,
   setNear,
@@ -20,7 +20,7 @@ describe("setAuthToken", () => {
     const token = "xbhbY3Bhb3jbJbhjxbhj3HB";
     const action = setAuthToken(token);
     expect(action.type).toEqual(SET_AUTH_TOKEN);
-    expect(action.token).toEqual(token);
+    expect(action.authToken).toEqual(token);
   });
 });
 
@@ -60,14 +60,14 @@ describe("searchSuccess", () => {
     ];
     const action = searchSuccess(findings);
     expect(action.type).toEqual(SEARCH_SUCCESS);
-    expect(action.keyword).toEqual(findings);
+    expect(action.findings).toEqual(findings);
   });
 });
 
 describe("setPlaceID", () => {
   it("Should return the action", () => {
     const id = "CH1HFDNS2EG4EWF";
-    const action = setPlaceId();
+    const action = setPlaceId(id);
     expect(action.type).toEqual(SET_PLACE_ID);
     expect(action.id).toEqual(id);
   });

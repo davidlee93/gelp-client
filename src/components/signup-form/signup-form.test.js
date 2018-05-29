@@ -1,9 +1,9 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Place from "./index";
+import SignupForm from "./index";
 
-describe("<Place />", () => {
+describe("<SignupForm />", () => {
   it("Should render without crashing", () => {
-    shallow(<Place place_id="123test" />);
+    shallow(<SignupForm />);
   });
 });
