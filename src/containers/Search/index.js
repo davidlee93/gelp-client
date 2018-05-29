@@ -9,10 +9,6 @@ import "./search.css";
 import { fetchProtectedData } from "../../actions/protected-data";
 
 export class Search extends React.Component {
-  componentDidMount() {
-    this.props.dispatch(fetchProtectedData());
-  }
-
   render() {
     return (
       <div className="searchPage">
@@ -36,5 +32,4 @@ export class Search extends React.Component {
 const mapStateToProps = state => {
   loggedIn: state.auth.currentUser !== null;
 };
-// export default connect(mapStateToProps)(Search);
 export default requiresLogin()(connect(mapStateToProps)(Search));

@@ -14,7 +14,7 @@ const initialState = {
   near: "",
   location: "",
   id: "",
-  placeInfo: "",
+  placeInfo: {},
   findings: [],
   loading: false,
   error: null

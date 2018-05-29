@@ -190,9 +190,12 @@ export class SearchResults extends React.Component {
             info: content
           });
 
-          google.maps.event.addListener(marker, "click", function() {
+          google.maps.event.addListener(marker, "mouseover", function() {
             infowindow.setContent(this.info);
             infowindow.open(map, this);
+          });
+          google.maps.event.addListener(marker, "mouseout", function() {
+            infowindow.close();
           });
         }
       }

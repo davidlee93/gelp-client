@@ -64,7 +64,9 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
               <div className="open-closed">
                 <h5>
                   Hours -
-                  {placeInfo ? (
+                  {placeInfo &&
+                  placeInfo.opening_hours &&
+                  placeInfo.opening_hours.open_now ? (
                     <span style={{ color: "#00ff00" }}> Open now</span>
                   ) : (
                     <span style={{ color: "#ff0000" }}> Closed now</span>
@@ -98,7 +100,7 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
         </div>
       </div>
       <div className="place-images-box">
-        {placeInfo.urls && <PlacePhotos photos={placeInfo.urls} />}
+        {placeInfo && placeInfo.urls && <PlacePhotos photos={placeInfo.urls} />}
       </div>
     </div>
   );
