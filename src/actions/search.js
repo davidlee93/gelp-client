@@ -26,6 +26,12 @@ export const searchSuccess = findings => ({
   findings
 });
 
+export const SET_NO_RESULTS = "SET_NO_RESULTS";
+export const setNoResults = noResults => ({
+  type: SET_NO_RESULTS,
+  noResults
+});
+
 export const SEARCH_ERROR = "SEARCH_ERROR";
 export const searchError = error => ({
   type: SEARCH_ERROR,
