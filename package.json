@@ -33,7 +33,6 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "faker": "^4.1.0",
-    "jest-localstorage-mock": "^2.2.0",
     "mocha": "^5.1.1",
     "react-scripts": "1.1.4",
     "react-test-renderer": "^16.4.0"
