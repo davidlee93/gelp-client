@@ -1,3 +1,6 @@
+.signUpPage {
+  margin-bottom: 40px;
+}
 .signup-section {
   display: flex;
   flex-direction: column;

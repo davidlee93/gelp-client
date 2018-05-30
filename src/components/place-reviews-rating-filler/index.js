@@ -24,8 +24,7 @@ const RatingFiller = () => {
             </ul>
             <p className="review-text-filler">
               There seems to be no reviews for this location. Be the first to
-              write a review on this place! Your review will replace this
-              review.
+              write a review on this place! Your review will replace this one :)
             </p>
           </div>
         </div>

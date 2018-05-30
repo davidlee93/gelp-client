@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import Header from "../../components/header";
 import LoginForm from "../../components/login-form";
+import DemoForm from "../../components/demo-form";
 import styled from "styled-components";
 import "./login.css";
 
@@ -30,6 +31,9 @@ export function Login(props) {
       </div>
       <LoginForm />
       <div className="new-signup">
+        <div>
+          <DemoForm />
+        </div>
         <div>
           New to Gelp?<StyledLink to="/signup"> Sign up</StyledLink>
         </div>

@@ -22,7 +22,8 @@ export default class LandingBoxStart extends React.Component {
         <p>
           Come give us a try - just{" "}
           <StyledLink to={`/signup`}>Sign up</StyledLink> and start exploring!
-          Already on Gelp? <StyledLink to={`/login`}>Log in</StyledLink>
+          Already on Gelp or want to try a demo? Click{" "}
+          <StyledLink to={`/login`}>Here</StyledLink>
         </p>
       </div>
     );

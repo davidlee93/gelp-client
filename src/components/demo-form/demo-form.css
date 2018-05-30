@@ -1,0 +1,17 @@
+.demo-submit-button {
+  background-color: #d32323;
+  border-color: #8d0005;
+  border-radius: 3px;
+  padding: 7px 36px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background: #be2020;
+}

@@ -63,7 +63,7 @@
 }
 
 .place-result-left-info h5 {
-  margin-top: 2px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -142,4 +142,62 @@
 .place-website a:visited {
   text-decoration: none;
   color: #0073bb;
+}
+
+@media only screen and (max-width: 800px) {
+  .place-result-detail {
+    margin-left: 6.5%;
+    margin-right: 6.5%;
+  }
+  .place-result-left-info {
+    width: 60%;
+  }
+  .place-ratings-list li,
+  .hours-list tr,
+  .reviews-number {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .place-result-detail {
+    display: block;
+  }
+  .place-result-left,
+  .place-result-right {
+    width: 100%;
+  }
+  .place-result-left-ratings h4,
+  .open-closed h5 {
+    font-size: 12px;
+  }
+  .place-ratings-list li {
+    font-size: 11px;
+  }
+  .place-result-map {
+    width: 100%;
+    height: 300px;
+  }
+  .hours-list tr {
+    font-size: 11px;
+  }
+  .user-name h5 {
+    font-size: 12px;
+  }
+  .place-review-ratings-list li {
+    font-size: 12px;
+  }
+  .place-result-review p {
+    font-size: 11px !important;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .place-result-review {
+    margin-left: 0;
+    margin-right: 0;
+    display: grid;
+    grid-template-rows: 0.5fr 2fr;
+    grid-template-columns: inherit;
+  }
 }

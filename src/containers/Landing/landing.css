@@ -42,3 +42,31 @@
   border: 1px solid black;
   text-align: center;
 }
+
+@media only screen and (max-width: 796px) {
+  .landing-box {
+    height: 400px;
+  }
+  .landing-box-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+  }
+  .landing-box-list li {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .landing-box {
+    height: 300px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .landing-box {
+    height: 200px;
+  }
+}

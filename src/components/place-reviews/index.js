@@ -1,12 +1,10 @@
 import React from "react";
 import Rating from "../place-reviews-rating";
-// import RatingFiller from "../place-reviews-rating-filler";
+import RatingFiller from "../place-reviews-rating-filler";
 import "./place-reviews.css";
 
 const PlaceReviews = ({ ratings }) => {
-  if (!ratings) {
-    return false;
-  } else {
+  if (ratings.length > 0) {
     const avgRating = ratings.map(rating => {
       return ((rating.quantity + rating.quality + rating.pricing) / 3).toFixed(
         1
@@ -17,6 +15,8 @@ const PlaceReviews = ({ ratings }) => {
     ));
 
     return <ul className="place-result-reviews">{placeRatings}</ul>;
+  } else {
+    return <RatingFiller />;
   }
 };
 
