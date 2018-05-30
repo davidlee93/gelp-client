@@ -1,9 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { Field, reduxForm, focus } from "redux-form";
-import Input from "../input";
 import { demoLogin } from "../../actions/auth";
-import { required, nonEmpty, email } from "../../validators";
 import "./demo-form.css";
 
 export class DemoForm extends React.Component {
