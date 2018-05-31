@@ -35,7 +35,6 @@ export class SearchBar extends React.Component {
           // this.props.dispatch(setLocality(response.results[0].address_components[0]))
           this.props.history.push("/findings");
         } else {
-          console.log(response.results);
           this.props.history.push("/error");
         }
       })
@@ -84,9 +83,6 @@ export class SearchBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  // keyword: state.keyword,
-  // near: state.near,
-  // location: state.location,
   search: state.search,
   loading: state.loading,
   error: state.error

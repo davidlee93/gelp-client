@@ -120,20 +120,6 @@ export class SearchResults extends React.Component {
             this.setState({ findings: newFindings });
           }
         })
-
-        //   const { findings } = this.props;
-        //   const newFindings = findings.map(finding => {
-        //     const targetId = finding.place_id;
-        //     const ratings = ratingsArray.find(
-        //       ratings => (ratings._id = targetId)
-        //     );
-        //     console.log(ratings);
-        //     return Object.assign({}, finding, ratings);
-        //   });
-        //   this.setState({ findings: newFindings });
-        //   //TODO CHANGE ABOVE TO MAP PROPERLY
-
-        // })
         .catch(error => console.log(error));
     }
   };

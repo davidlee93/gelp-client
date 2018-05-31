@@ -12,12 +12,9 @@ export class PlaceDetail extends React.Component {
     ratings: []
   };
   componentWillMount() {
-    console.log("willmount run");
     this.props.dispatch(setPlaceId(this.props.place_id));
   }
   componentDidMount() {
-    console.log("component did mount");
-    console.log(this.props.place_id);
     this.props.dispatch(setPlaceId(this.props.place_id));
     const id = this.props.place_id;
     const google = window.google;
@@ -37,14 +34,11 @@ export class PlaceDetail extends React.Component {
     if (this.props.placeInfo !== nextProps.placeInfo) {
       this.fetchMapSetPhotos(nextProps.placeInfo, nextProps.place_id);
     }
-    console.log(this.state);
   }
 
   callback = (place, status) => {
     const google = window.google;
-    console.log("callback started");
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      console.log("status ok");
       this.props.dispatch(setDetailInfo(place));
       this.setState({ photos: place.photos });
       fetch(`${API_BASE_URL}/ratings/place/${place.place_id}`, {
@@ -55,7 +49,6 @@ export class PlaceDetail extends React.Component {
         .then(ratings => this.setState({ ratings }))
         .catch(error => console.log(error));
     }
-    console.log("calback finished");
   };
 
   fetchMapSetPhotos = (placeInfo, place_id) => {
@@ -138,44 +131,3 @@ const mapStateToProps = state => ({
   placeInfo: state.search.placeInfo
 });
 export default connect(mapStateToProps)(PlaceDetail);
-
-// renderResult() {
-//   const { placeInfo } = this.props;
-//   const { photos } = this.state;
-//   const { ratings } = this.state;
-//   placeInfo.urls = photos;
-//   return (
-//     <div className="place-result">
-//       <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
-//       <div className="place-result-reviews-box">
-//         <PlaceReviews ratings={ratings} />
-//       </div>
-//     </div>
-//   );
-// }
-
-// render() {
-//   return <div className="place-result-container">{this.renderResult()}</div>;
-// }
-
-//       OR
-//
-// render() {
-//   const { placeInfo } = this.props;
-//   const { photos } = this.state;
-//   const { ratings } = this.state;
-//   console.log("placeInfo prop set");
-//   if (placeInfo) {
-//     placeInfo.urls = photos;
-//   }
-//   return (
-//     <div className="place-result-container">
-//       <div className="place-result">
-//         <PlaceDetailInfo placeInfo={placeInfo} ratings={ratings} />
-//         <div className="place-result-reviews-box">
-//           <PlaceReviews ratings={ratings} />
-//         </div>
-//       </div>]
-//     </div>
-//   );
-// }
