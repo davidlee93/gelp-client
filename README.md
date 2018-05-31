@@ -187,12 +187,12 @@ Findings Page:
 Place Page:
 ![Place Page screenshot](https://github.com/davidlee93/gelp-client/blob/master/public/place-page.png)
 
-Rate Page:
+Rate Page:<br />
 ![Rate Page: screenshot](https://github.com/davidlee93/gelp-client/blob/master/public/Rate%20Page.png)
 
 ## Technical/Technology
 
-### technologies:
+### Technologies:
 
 / <a href="https://reactjs.org/">React</a> / <a href="https://redux.js.org/">Redux</a> / HTML5 / CSS3 / JavaScript / <a href="https://github.com/airbnb/enzyme">Enzyme</a> / <a href="https://travis-ci.org/">Travis CI</a> / <a href="https://www.netlify.com/">Netlify</a> /
 
@@ -200,6 +200,6 @@ Rate Page:
 * The web app is fully responsive, adapting for mobile, table and desktop viewports.
 * A RESTful API was created in making this web app - Node Express was utilized in Gelp API
 
-### Backend Gelp APi repository:
+### Backend Gelp API repository:
 
 https://github.com/davidlee93/gelp-server
