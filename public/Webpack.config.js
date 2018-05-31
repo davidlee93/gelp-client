@@ -6,7 +6,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       inject: false,
-      template: "index.html",
+      template: "./index.html",
 
       // Pass the full url with the key!
       apiUrl: `https://maps.googleapis.com/maps/api/js?key=${api_key}&libraries=places`
