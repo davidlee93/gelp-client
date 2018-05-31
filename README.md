@@ -2,19 +2,19 @@
 
 https://gelp.netlify.com/
 
-Thinkful's (https://www.thinkful.com/) React Fullstack Capstone Project - A web app using Node and Express to create a backend that serves your static files and a REST API.
+Thinkful's (https://www.thinkful.com/) React Fullstack Capstone Project
 
 ## Introduction
 
-It's a take on Yelp using Google Places Library and Google Maps Javascript API v3. Much like it's predecessor, Gelp provides users the ability to explore local businesses and leave reviews. Start searching for local businesses and write some reviews. The review system is a bit unique in that you rate a place on 3 criteria - Quantity, Quality, and Pricing.
+Gelp - It's a take on Yelp using Google Places Library and Google Maps Javascript API v3. Much like it's predecessor, Gelp provides users the ability to explore local businesses and leave reviews. Start searching for local businesses and write some reviews. The review system is a bit unique in that you rate a place on 3 criteria - Quantity, Quality, and Pricing.
 
 ## Client-side
 
 The app was designed to work on mobile as well as tablet and desktop from the outset.
 
-### Documentation of API
+## Documentation of API
 
-## **Show Reviews on specific Place**
+### **Show Reviews on specific Place**
 
 Returns json data of all ratings of a place
 
@@ -42,14 +42,68 @@ Returns json data of all ratings of a place
 
 - **Sample Call:**
 
-  fetch('/api/ratings/:CH123hfjsisi2', {
-  method: "GET",
-  headers: { 'Content-Type': 'application/json'}
-  })
-  .then(response => response.json())
-  .catch(error => console.log(error));
+  fetch('/api/ratings/:CH123hfjsisi2', {<br />
+  method: "GET",<br />
+  headers: { 'Content-Type': 'application/json'}<br />
+  })<br />
+  .then(response => response.json())<br />
+  .catch(error => console.log(error));<br />
 
-## **Create Review**
+### **Create User**
+
+Create a new user
+
+* **URL**
+
+  /api/users
+
+* **Method:**
+
+  `POST`
+
+* **URL Params**
+
+  **Required:**
+  'email=[string]'
+  'password=[string]'
+  'firstname=[string]'
+  'lastname=[string]'
+  'zipcode=[number]'
+
+* **Data Params**
+
+  `{ email=[string]', password=[string]', firstname=[string]', lastname=[string]', zipcode=[number]' }`
+
+* **Success Response:**
+
+  * **Code:** 201 <br />
+    **Content:** `{ message: Successfully created user: ${user.email} }`
+
+* **Error Response:**
+
+  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
+
+  * **Code:** 400 <br />
+    **Content:** `{message = 'Missing "field" in request body'}`
+
+  OR
+
+  * **Code:** 500 <br />
+    **Content:** `{ message : "Internal servor Error" }`
+
+* **Sample Call:**
+
+  return fetch(`${API_BASE_URL}/users`, {<br />
+  method: "POST",<br />
+  headers: {<br />
+  "content-type": "application/json"<br />
+  },<br />
+  body: JSON.stringify(user)<br />
+  })<br />
+  .then(res => normalizeResponseErrors(res))<br />
+  .then(res => res.json())<br />
+
+### **Create Review**
 
 Create a new Review
 
@@ -99,69 +153,15 @@ Create a new Review
 
 * **Sample Call:**
 
-  fetch(`${API_BASE_URL}/ratings`, {
-  method: "POST",
-  headers: {
-  "content-type": "application/json"
-  },
-  body: JSON.stringify(rating)
-  })
-  .then(res => normalizeResponseErrors(res))
-  .then(res => res.json())
-
-## **Create User**
-
-Create a new user
-
-* **URL**
-
-  /api/users
-
-* **Method:**
-
-  `POST`
-
-* **URL Params**
-
-  **Required:**
-  'email=[string]'
-  'password=[string]'
-  'firstname=[string]'
-  'lastname=[string]'
-  'zipcode=[number]'
-
-* **Data Params**
-
-  `{ email=[string]', password=[string]', firstname=[string]', lastname=[string]', zipcode=[number]' }`
-
-* **Success Response:**
-
-  * **Code:** 201 <br />
-    **Content:** `{ message: Successfully created user: ${user.email} }`
-
-* **Error Response:**
-
-  <_Most endpoints will have many ways they can fail. From unauthorized access, to wrongful parameters etc. All of those should be liste d here. It might seem repetitive, but it helps prevent assumptions from being made where they should be._>
-
-  * **Code:** 400 <br />
-    **Content:** `{message = 'Missing "field" in request body'}`
-
-  OR
-
-  * **Code:** 500 <br />
-    **Content:** `{ message : "Internal servor Error" }`
-
-* **Sample Call:**
-
-  return fetch(`${API_BASE_URL}/users`, {
-  method: "POST",
-  headers: {
-  "content-type": "application/json"
-  },
-  body: JSON.stringify(user)
-  })
-  .then(res => normalizeResponseErrors(res))
-  .then(res => res.json())
+  fetch(`${API_BASE_URL}/ratings`, {<br />
+  method: "POST",<br />
+  headers: {<br />
+  "content-type": "application/json"<br />
+  },<br />
+  body: JSON.stringify(rating)<br />
+  })<br />
+  .then(res => normalizeResponseErrors(res))<br />
+  .then(res => res.json())<br />
 
 * **Notes:**
 
