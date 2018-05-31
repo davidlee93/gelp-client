@@ -26,12 +26,6 @@ export const searchSuccess = findings => ({
   findings
 });
 
-export const SET_NO_RESULTS = "SET_NO_RESULTS";
-export const setNoResults = noResults => ({
-  type: SET_NO_RESULTS,
-  noResults
-});
-
 export const SEARCH_ERROR = "SEARCH_ERROR";
 export const searchError = error => ({
   type: SEARCH_ERROR,
@@ -49,15 +43,3 @@ export const setDetailInfo = placeInfo => ({
   type: SET_DETAIL_INFO,
   placeInfo
 });
-
-// export const searchInputs = (keyword, location) => dispatch => {
-//     dispatch(searchRequest());
-//     return fetch(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${location}&radius=8100&type=restaurant&keyword=${keyword}&key=AIzaSyDqCUlkl2tTiCdR4VesmoMW47j7mLRTbhM`)
-//     .then(res => {
-//         if (!res.ok) {
-//             return Promise.reject(res.statusText);
-//         }
-//         return res.json();
-//     }).then(data => dispatch(searchSuccess(data.results)))
-//       .catch(error => dispatch(searchError(error)));
-// };
