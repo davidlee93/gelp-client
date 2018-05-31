@@ -7,10 +7,3 @@ describe("<SearchBar />", () => {
     shallow(<SearchBar />);
   });
 });
-// it("Should keep the input when the form is submitted", () => {
-//   const wrapper = mount(<SearchBar />);
-//   const input = wrapper.find('input[type="text"]');
-//   input.instance().value = "berkeley";
-//   wrapper.simulate("submit");
-//   expect(input.instance().value).toEqual("berkeley");
-// });
