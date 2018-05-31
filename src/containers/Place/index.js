@@ -7,8 +7,6 @@ import Logo from "../../components/logo";
 import LogOutBar from "../../components/logout-bar";
 import PlaceDetail from "../../components/place-detail";
 
-import "./place.css";
-
 export class Place extends React.Component {
   render() {
     return (
