@@ -1,5 +1,5 @@
 const api_key = process.env.REACT_APP_WEBPACK_GOOGLE_API_KEY;
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "index.js",
