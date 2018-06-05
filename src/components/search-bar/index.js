@@ -54,7 +54,7 @@ export class SearchBar extends React.Component {
               name="find"
               id="keyword"
               className="search keyword border-right"
-              placeholder="sushi, burritos, ayce kbbq..."
+              placeholder="sushi, ayce kbbq..."
               value={this.state.keyword}
               onChange={e => this.setState({ keyword: e.target.value })}
             />
@@ -68,7 +68,7 @@ export class SearchBar extends React.Component {
               name="near"
               id="near"
               className="search near"
-              placeholder="address, city, state or zip"
+              placeholder="address, city, or zip"
               value={this.state.near}
               onChange={e => this.setState({ near: e.target.value })}
             />

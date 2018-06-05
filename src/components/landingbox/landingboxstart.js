@@ -4,7 +4,7 @@ import styled from "styled-components";
 import "./landingbox.css";
 
 const StyledLink = styled(Link)`
-  color: #459cd1;
+  color: dodgerblue;
   font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
   font-weight: bold;

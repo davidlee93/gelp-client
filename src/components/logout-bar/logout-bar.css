@@ -15,3 +15,7 @@
   cursor: pointer;
   background-color: #85e0f7;
 }
+
+.logout-button:hover {
+  background-color: #62b7f1;
+}

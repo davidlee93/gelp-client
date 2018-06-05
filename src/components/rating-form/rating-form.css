@@ -2,14 +2,13 @@
   border: 0.5px solid lightgrey;
   border-radius: 4px;
   padding: 10px;
-  font-size: 18px;
 }
 
 #textarea {
-  width: 475px;
+  width: 90%;
   height: 200px;
   border: none;
-  font-size: 18px;
+  font-size: 12px;
 }
 
 #textarea::placeholder {
@@ -21,23 +20,62 @@ button:focus {
   outline: none;
 }
 
+.radio-button {
+  display: flex;
+  margin-right: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+
+input#quality,
+input#quantity,
+input#pricing {
+  margin-top: 5px;
+}
+
+.radio-star {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.star-value {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 .radio-button-div {
   display: flex;
   flex-direction: row;
 }
 
-input#quantity {
-  margin: 8px 4px 12px 0;
+.review-form-border .form-input {
+  width: 100%;
 }
 
-input#quality {
-  margin: 8px 4px 12px 0;
-}
-input#pricing {
-  margin: 8px 4px 12px 0;
+@media only screen and (min-width: 450px) {
+  .radio-button {
+    flex-direction: row;
+  }
+  input#quality,
+  input#quantity,
+  input#pricing {
+    margin: 4px 4px 6px 2px;
+  }
 }
 
-.radio-button {
-  display: flex;
-  margin-right: 12px;
+@media only screen and (min-width: 650px) {
+  .review-form {
+    margin: 0 auto;
+  }
+  #textarea {
+    font-size: 16px;
+  }
+  .radio-star {
+    font-size: 16px;
+  }
+  input#quality,
+  input#quantity,
+  input#pricing {
+    margin: 4px 4px 2px 4px;
+  }
 }

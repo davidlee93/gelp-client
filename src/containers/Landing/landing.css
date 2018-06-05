@@ -1,6 +1,6 @@
 .landing-box {
   display: flex;
-  height: 525px;
+  height: 200px;
   background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
     url("https://source.unsplash.com/featured/?food");
   background-position: center;
@@ -22,14 +22,15 @@
 .landing-box-list {
   list-style-type: none;
   padding-left: 0;
-  height: 300px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-top: 0;
   margin-bottom: 0;
   padding-top: 15px;
   padding-bottom: 10px;
-  background-color: #afe5f7;
+  background-color: #62b7f1;
 }
 
 .landing-box-list li {
@@ -38,35 +39,33 @@
   margin: 10px;
   color: white;
   padding-left: 0;
-  width: 30%;
+  width: 80%;
   border: 1px solid black;
   text-align: center;
 }
 
-@media only screen and (max-width: 796px) {
-  .landing-box {
-    height: 400px;
-  }
-  .landing-box-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 100%;
-    align-items: center;
-  }
-  .landing-box-list li {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 540px) {
+@media only screen and (min-width: 400px) {
   .landing-box {
     height: 300px;
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (min-width: 540px) {
   .landing-box {
-    height: 200px;
+    height: 400px;
+  }
+}
+
+@media only screen and (min-width: 796px) {
+  .landing-box {
+    height: 525px;
+  }
+  .landing-box-list {
+    display: flex;
+    flex-direction: row;
+    align-items: inherit;
+  }
+  .landing-box-list li {
+    width: 30%;
   }
 }

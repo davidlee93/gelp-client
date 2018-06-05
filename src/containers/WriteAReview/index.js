@@ -10,7 +10,7 @@ import "./rate.css";
 
 const StyledLink = styled(Link)`
   color: #0073bb;
-  font-size: 40px;
+  font-size: 30px;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   text-decoration: none;
 

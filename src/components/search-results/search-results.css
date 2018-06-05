@@ -48,6 +48,16 @@ i .info h5,
   margin-bottom: 0;
 }
 
+.info-title {
+  font-size: 11px;
+}
+
+.info-place h5,
+.info-place li,
+.info-place p {
+  font-size: 10px;
+}
+
 .info-place {
   display: flex;
   flex-direction: row;
@@ -59,7 +69,6 @@ i .info h5,
 }
 
 .info-place-ratings h5 {
-  font-size: 15px;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -70,23 +79,11 @@ i .info h5,
   margin-top: 0;
 }
 
-.info-place-ratings-list li {
-  font-size: 15px;
-}
-
 .address-open-review {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   width: 60%;
-}
-
-.address-open-review p {
-  font-size: 15px;
-}
-
-.open-closed p {
-  font-size: 15px;
 }
 
 .gm-style h3 {

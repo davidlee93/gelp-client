@@ -4,6 +4,7 @@
 
 .rate-header {
   display: flex;
+  flex-direction: column;
   margin: 0 12.5%;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -23,58 +24,25 @@
 }
 
 .rate-section {
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-  width: 500px;
+  margin-left: 10.5%;
+  margin-right: 10.5%;
+  width: 75%;
 }
 
-.review-section {
-  display: flex;
-  flex-direction: column;
+@media only screen and (min-width: 450px) {
+  .rate-header {
+    flex-direction: row;
+  }
+  .sc-ifAKCX {
+    font-size: 34px;
+  }
 }
 
-.review-writing-section {
-  width: 50%;
-}
-
-@media only screen and (max-width: 650px) {
+@media only screen and (min-width: 650px) {
   .rate-section {
-    width: 75%;
+    width: 500px;
   }
-  .review-form {
-    margin: 0 auto;
-  }
-  .review-form-border .form-input {
-    width: 100%;
-  }
-  #textarea {
-    width: 100%;
-    font-size: 12px;
-  }
-  .radio-star {
-    font-size: 16px;
-  }
-
-  input#quality,
-  input#quantity,
-  input#pricing {
-    margin: 6px 4px 12px 0;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .radio-button {
-    display: flex;
-    margin-right: 12px;
-    flex-direction: column;
-    align-items: center;
-  }
-  input#quality,
-  input#quantity,
-  input#pricing {
-    margin: 0;
-  }
-  .radio-star {
-    font-size: 14px;
+  .sc-ifAKCX {
+    font-size: 38px;
   }
 }

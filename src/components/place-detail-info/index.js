@@ -49,7 +49,10 @@ const PlaceDetailInfo = ({ placeInfo, ratings }) => {
                     <li>Quality: {avgQuality.toFixed(1) || "N/A"}</li>
                     <li>Pricing: {avgPricing.toFixed(1) || "N/A"}</li>
                   </ul>
-                  <p className="reviews-number"> {ratings.length} Reviews </p>
+                  <p className="place-reviews-number">
+                    {" "}
+                    {ratings.length} Reviews{" "}
+                  </p>
                 </div>
               </div>
               <div className="place-result-review-button">

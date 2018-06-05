@@ -3,13 +3,13 @@
 }
 
 .place-result-detail {
-  display: flex;
-  margin-left: 12.5%;
-  margin-right: 12.5%;
+  display: block;
+  margin: 0 5%;
 }
 
-.place-result-left {
-  width: 66%;
+.place-result-left,
+.place-result-right {
+  width: 100%;
 }
 
 .place-result-title h2 {
@@ -20,8 +20,8 @@
 
 .place-images-box {
   margin-top: 25px;
-  margin-left: 12.5%;
-  margin-right: 12.5%;
+  margin-left: 6%;
+  margin-right: 6%;
 }
 
 .place-images {
@@ -45,21 +45,24 @@
 }
 
 .place-result-left-ratings {
-  width: 40%;
+  width: 35%;
 }
 
 .place-result-left-ratings h4 {
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 12px;
 }
 
-.reviews-number {
+.place-reviews-number {
   margin-bottom: 0;
   padding-top: 20px;
+  font-size: 11px;
 }
 
 .place-result-left-info {
-  width: 50%;
+  width: 55%;
+  margin-left: 2.5%;
 }
 
 .place-result-left-info h5 {
@@ -68,17 +71,15 @@
 }
 
 .place-result-right {
-  width: 33%;
   margin-top: 10px;
   background: #fff;
   padding-bottom: 10px;
-  margin-left: 1%;
 }
 
 .place-result-map {
-  width: 100%;
-  height: 75%;
   background-color: lightblue;
+  width: 100%;
+  height: 275px;
 }
 
 .place-ratings-list {
@@ -88,24 +89,27 @@
 }
 
 .place-ratings-list li {
-  font-size: 16px;
+  font-size: 11px;
 }
 
 .write-a-review-button {
   background-color: #d32323;
   border-color: #8d0005;
   border-radius: 3px;
+  border-width: thin;
   padding: 9px 18px;
   margin-top: 5px;
   text-decoration: none;
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
 }
-
+.write-a-review-button:hover {
+  background: #be2020;
+}
 .open-closed h5 {
-  font-size: 15px;
+  font-size: 12px;
 }
 
 .hours-list {
@@ -115,7 +119,7 @@
 }
 
 .hours-list tr {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .hours-list th {
@@ -126,78 +130,79 @@
 .place-number p {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .place-website {
   margin-top: -2px;
+  overflow: hidden;
 }
 
 .place-website a {
   text-decoration: none;
   color: #0073bb;
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .place-website a:visited {
   text-decoration: none;
   color: #0073bb;
 }
+@media only screen and (min-width: 500px) {
+  .place-address p,
+  .place-number p,
+  .place-website a,
+  .place-ratings-list li,
+  .hours-list tr,
+  .user-name h5,
+  .place-review-ratings-list li,
+  .open-closed h5,
+  .place-result-left-ratings h4,
+  .place-reviews-number {
+    font-size: 14px;
+  }
+}
 
-@media only screen and (max-width: 800px) {
+@media only screen and (min-width: 650px) {
   .place-result-detail {
+    display: flex;
     margin-left: 6.5%;
     margin-right: 6.5%;
   }
   .place-result-left-info {
     width: 60%;
   }
-  .place-ratings-list li,
-  .hours-list tr,
-  .reviews-number {
-    font-size: 12px;
+  .place-result-left {
+    width: 66%;
   }
-}
-
-@media only screen and (max-width: 650px) {
-  .place-result-detail {
-    display: block;
-  }
-  .place-result-left,
   .place-result-right {
-    width: 100%;
-  }
-  .place-result-left-ratings h4,
-  .open-closed h5 {
-    font-size: 12px;
-  }
-  .place-ratings-list li {
-    font-size: 11px;
+    width: 33%;
   }
   .place-result-map {
-    width: 100%;
-    height: 300px;
-  }
-  .hours-list tr {
-    font-size: 11px;
-  }
-  .user-name h5 {
-    font-size: 12px;
-  }
-  .place-review-ratings-list li {
-    font-size: 12px;
-  }
-  .place-result-review p {
-    font-size: 11px !important;
+    height: 75%;
+    background-color: lightblue;
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .place-result-review {
-    margin-left: 0;
-    margin-right: 0;
-    display: grid;
-    grid-template-rows: 0.5fr 2fr;
-    grid-template-columns: inherit;
+@media only screen and (min-width: 800px) {
+  .place-result-detail {
+    margin-left: 9.5%;
+    margin-right: 9.5%;
+  }
+  .place-address p,
+  .place-number p,
+  .place-website a,
+  .place-ratings-list li,
+  .hours-list tr,
+  .user-name h5,
+  .place-review-ratings-list li,
+  .open-closed h5,
+  .place-result-left-ratings h4,
+  .place-reviews-number {
+    font-size: 15px;
+  }
+  .place-images-box {
+    margin-left: 8.5%;
+    margin-right: 8.5%;
   }
 }

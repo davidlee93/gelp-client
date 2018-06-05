@@ -1,5 +1,5 @@
 .search-form-box {
-  margin-left: 15px;
+  margin-left: 0;
 }
 
 .search-form {
@@ -7,12 +7,12 @@
   justify-content: center;
   border-radius: 3px;
   background: white;
-  height: 38px;
+  height: 80px;
 }
 
 .search-div {
-  display: flex;
-  align-items: center;
+  display: block;
+  width: 230px;
 }
 
 input.search {
@@ -24,12 +24,21 @@ input.search {
 }
 
 input.search.border-right {
-  border-right: 1px solid grey;
+  border-right: none;
+}
+
+.find-div {
+  border-bottom: 0.1px solid lightgray;
 }
 
 .find-div,
 .near-div {
+  display: flex;
+  align-items: center;
   padding-left: 10px;
+  padding-top: 0px;
+  padding-bottom: 6px;
+  margin-top: 8px;
 }
 
 .find-div label,
@@ -55,56 +64,36 @@ input.search.border-right {
 input:-webkit-autofill {
   box-shadow: 0 0 0 30px white inset;
 }
-
-@media only screen and (max-width: 800px) {
-  .search-form-box {
-    margin-left: 0;
-  }
-  .search-form {
-    height: 80px;
-  }
+@media only screen and (min-width: 600px) {
   .search-div {
-    display: block;
-  }
-  .find-div,
-  .near-div {
-    padding-top: 0px;
-    padding-left: 10px;
-    display: block;
-  }
-  .find-div {
-    border-bottom: 0.1px solid lightgray;
-    padding-bottom: 8px;
-    margin-top: 5px;
-  }
-  .near-div {
-    margin-top: 5px;
-  }
-  input.search.border-right {
-    border-right: none;
+    width: inherit;
   }
 }
 
-@media only screen and (max-width: 450px) {
-  .search-div {
-    width: 280px;
+@media only screen and (min-width: 800px) {
+  .search-form {
+    height: 38px;
   }
-  .find-div,
-  .near-div {
+  .search-div {
     display: flex;
     align-items: center;
-  }
-  .find-div {
-    padding-bottom: 6px;
-    margin-top: 8px;
+    width: inherit;
   }
   input.search.border-right {
-    border-right: none;
+    border-right: 1px solid grey;
+  }
+  .find-div {
+    border-bottom: none;
+  }
+  .find-div,
+  .near-div {
+    width: 275px;
   }
 }
 
-@media only screen and (max-width: 350px) {
-  .search-div {
-    width: 230px;
+@media only screen and (min-width: 960px) {
+  .find-div,
+  .near-div {
+    width: inherit;
   }
 }

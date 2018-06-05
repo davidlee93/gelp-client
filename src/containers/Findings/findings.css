@@ -1,10 +1,10 @@
 .nav-search-box {
-  padding: 5px;
-  background-color: lightblue;
   display: flex;
+  flex-direction: column;
+  padding: 5px 5px 10px 5px;
   justify-content: center;
-  padding-right: 20px;
   align-items: center;
+  background-color: lightblue;
 }
 
 .header-filter-box {
@@ -12,70 +12,34 @@
 }
 
 .search-results-container {
-  margin-left: 11.5%;
-  margin-right: 11.5%;
   display: flex;
+  flex-direction: column-reverse;
+  margin: 0;
 }
 
 .search-results-column {
-  width: 66%;
+  width: 75%;
+  margin: 0 auto;
 }
 
-.search-results-box {
-  margin-right: 30px;
-}
-
-.search-results-pagination {
-  margin-right: 5%;
+.reviews-number {
+  padding-top: 0;
 }
 
 .search-results-map-container {
-  width: 33%;
-  position: fixed;
-  right: 60px;
-  margin-top: -25px;
+  width: 75%;
+  position: relative;
+  margin: 0 auto;
 }
 
 .search-results-map {
-  width: 300px;
-  height: 325px;
+  width: 100%;
+  height: 275px;
   background-color: lightblue;
   border: 1px solid black;
 }
 
-@media only screen and (max-width: 1050px) {
-  .nav-search-box {
-    flex-direction: column;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .reviews-number {
-    padding-top: 0 !important;
-  }
-}
-
-@media only screen and (max-width: 720px) {
-  .search-results-container {
-    flex-direction: column-reverse;
-    margin: 0;
-  }
-  .search-results-map-container {
-    width: 75%;
-    position: relative;
-    margin: 0 auto;
-    right: inherit;
-  }
-  .search-results-map {
-    width: 100%;
-  }
-  .search-results-column {
-    width: 75%;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (max-width: 550px) {
+@media only screen and (min-width: 450px) {
   .search-results-box {
     margin-right: 0;
   }
@@ -84,35 +48,85 @@
   }
   .findings-image img {
     min-width: 90px;
-    width: auto;
-    height: auto;
     max-width: 90px;
     min-height: 90px;
   }
-
   .info-place-ratings,
   .address-open-review {
     width: 100%;
   }
-}
-
-@media only screen and (max-width: 380px) {
-  .findings-image {
-    height: 60px;
-  }
-  .findings-image img {
-    min-width: 60px;
-    width: auto;
-    height: auto;
-    max-width: 60px;
-    min-height: 60px;
-  }
   .info-title {
-    font-size: 11px;
+    font-size: 14px;
   }
   .info-place h5,
   .info-place li,
   .info-place p {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .info-title {
+    font-size: 14.5px;
+  }
+  .info-place h5,
+  .info-place li,
+  .info-place p {
+    font-size: 13.5px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .search-results-container {
+    flex-direction: column;
+  }
+  .search-results-map-container {
+    width: 33%;
+    height: 325px;
+    position: fixed;
+    right: 60px;
+  }
+  .search-results-map {
+    width: 300px;
+    height: 325px;
+  }
+  .search-results-column {
+    width: 66%;
+    margin: 0;
+  }
+  .findings-image {
+    height: 120px;
+  }
+  .findings-image img {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+  }
+  .info-title {
+    font-size: 15px;
+  }
+  .info-place h5,
+  .info-place li,
+  .info-place p {
+    font-size: 15px;
+  }
+  .search-results-container {
+    margin-left: 11.5%;
+    margin-right: 11.5%;
+  }
+  .search-results-box {
+    margin-right: 30px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .reviews-number {
+    padding-top: 15px;
+  }
+}
+
+@media only screen and (min-width: 1060px) {
+  .nav-search-box {
+    flex-direction: row;
   }
 }

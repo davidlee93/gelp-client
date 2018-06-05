@@ -1,13 +1,6 @@
 import React from "react";
 
 const Rating = ({ rating, avgRating }) => {
-  if (rating === null) {
-    return (
-      <div className="no-data">
-        <h3>Welcome! Your dashboard looks empty, do some exercise!</h3>
-      </div>
-    );
-  }
   return (
     <li className="place-result-review-list">
       <div className="place-result-review">

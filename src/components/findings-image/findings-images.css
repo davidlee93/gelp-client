@@ -1,7 +1,7 @@
 .findings-image {
   padding-right: 10px;
   padding-bottom: 5px;
-  height: 120px;
+  height: 60px;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -11,10 +11,9 @@
 
 .findings-image img {
   border-radius: 4px;
-  min-width: 120px;
-  min-height: 120px;
+  min-width: 60px;
   width: auto;
   height: auto;
-  max-width: 120px;
-  min-height: 120px;
+  max-width: 60px;
+  min-height: 60px;
 }

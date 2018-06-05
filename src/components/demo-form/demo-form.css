@@ -2,6 +2,7 @@
   background-color: #d32323;
   border-color: #8d0005;
   border-radius: 3px;
+  border-width: thin;
   padding: 7px 36px;
   margin-top: 10px;
   margin-bottom: 20px;
@@ -12,6 +13,6 @@
   cursor: pointer;
 }
 
-.submit-button:hover {
+.demo-submit-button:hover {
   background: #be2020;
 }

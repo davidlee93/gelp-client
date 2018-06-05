@@ -6,21 +6,26 @@
 }
 
 .place-result-review-filler {
+  margin-left: 0;
+  margin-right: 0;
   display: grid;
-  grid-template-columns: 1fr 4fr;
-  padding-top: 25px;
-  padding-bottom: 15px;
+  grid-template-columns: inherit;
   border-bottom: 0.1px solid lightgray;
 }
 
 .place-result-review-filler p {
-  font-size: 14px;
+  font-size: 11px;
 }
 
 .user-name-filler h5 {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 12px;
+}
+
+.place-result-review-list-filler {
+  padding-right: 10px;
+  list-style-type: none;
 }
 
 .place-review-ratings-list-filler {
@@ -31,18 +36,31 @@
   margin-top: 0;
 }
 
-.place-result-review-list-filler {
-  margin-right: 25px;
-  padding-right: 10px;
-  list-style-type: none;
-}
-
 .place-review-ratings-list-filler li {
-  border-bottom: 0.1px solid darkgray;
+  font-size: 12px;
   margin-right: 15px;
+  border-bottom: 0.1px solid darkgray;
+  text-align: center;
 }
 
 .place-aggregate-rating-filler {
   border-right: 0.1px solid darkgray;
   padding-right: 4px;
+}
+
+@media only screen and (min-width: 500px) {
+  .place-review-ratings-box-filler {
+    margin-left: 2.5%;
+  }
+  .place-result-review-filler {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    padding-top: 25px;
+    padding-bottom: 15px;
+  }
+  .place-result-review-filler p,
+  .place-review-ratings-list-filler li,
+  .user-name-filler h5 {
+    font-size: 14px;
+  }
 }
